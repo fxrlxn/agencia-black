@@ -694,6 +694,162 @@ footer{background:var(--black-soft);color:#9C9CA3;padding:64px 0 32px;border-top
   animation:pulseRing 2.4s ease-out infinite;
 }
 @media(prefers-reduced-motion: reduce){.wa-float::before{animation:none}}
+
+/* ===== PORTFOLIO / CASES ===== */
+.portfolio-grid{display:grid;grid-template-columns:1fr;gap:22px}
+@media(min-width:700px){.portfolio-grid{grid-template-columns:repeat(3,1fr)}}
+
+.portfolio-card{
+  position:relative;border-radius:14px;overflow:hidden;cursor:pointer;
+  background:var(--black);border:1px solid var(--black-line);
+  transition:transform .4s var(--ease),border-color .4s var(--ease),box-shadow .4s var(--ease);
+}
+.portfolio-card:hover{
+  transform:translateY(-8px);
+  border-color:color-mix(in srgb,var(--amber) 50%,transparent);
+  box-shadow:0 32px 64px -20px rgba(255,106,26,.25);
+}
+.portfolio-card:focus-visible{
+  outline:2px solid var(--amber);outline-offset:3px;
+}
+
+.portfolio-thumb{
+  position:relative;overflow:hidden;padding:32px 20px;
+  display:flex;align-items:center;justify-content:center;
+}
+.portfolio-thumb-bg{
+  position:absolute;inset:0;
+  display:flex;align-items:center;justify-content:center;padding:28px 24px;
+}
+.portfolio-thumb-bg::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 40%,rgba(11,11,13,.7) 100%);
+  pointer-events:none;
+}
+
+/* Brand color treatments per card */
+.portfolio-card[data-case="ferreira"] .portfolio-thumb-bg{
+  background:linear-gradient(135deg,#1a1a18 0%,#2a2520 50%,#1a1a18 100%);
+}
+.portfolio-card[data-case="ferreira"] .portfolio-thumb-accent{color:#C9A94E}
+
+.portfolio-card[data-case="bluedot"] .portfolio-thumb-bg{
+  background:linear-gradient(135deg,#f5f5f0 0%,#e8eef5 50%,#f5f5f0 100%);
+}
+.portfolio-card[data-case="bluedot"] .portfolio-thumb-accent{color:#1A3A8A}
+
+.portfolio-card[data-case="soraia"] .portfolio-thumb-bg{
+  background:linear-gradient(135deg,#f7f3ef 0%,#efe8e0 50%,#f7f3ef 100%);
+}
+.portfolio-card[data-case="soraia"] .portfolio-thumb-accent{color:#8B2D2D}
+
+/* Mini browser mockup inside thumb */
+.portfolio-mini-browser{
+  position:relative;z-index:1;width:100%;
+  background:rgba(255,255,255,.06);border-radius:8px;overflow:hidden;
+  border:1px solid rgba(255,255,255,.08);
+  box-shadow:0 16px 40px -12px rgba(0,0,0,.5);
+}
+.portfolio-card[data-case="bluedot"] .portfolio-mini-browser,
+.portfolio-card[data-case="soraia"] .portfolio-mini-browser{
+  background:rgba(0,0,0,.04);border-color:rgba(0,0,0,.08);
+  box-shadow:0 16px 40px -12px rgba(0,0,0,.15);
+}
+.portfolio-mini-bar{
+  display:flex;align-items:center;gap:5px;padding:8px 10px;
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.portfolio-card[data-case="bluedot"] .portfolio-mini-bar,
+.portfolio-card[data-case="soraia"] .portfolio-mini-bar{
+  border-bottom-color:rgba(0,0,0,.06);
+}
+.portfolio-mini-bar span{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.15)}
+.portfolio-card[data-case="bluedot"] .portfolio-mini-bar span,
+.portfolio-card[data-case="soraia"] .portfolio-mini-bar span{background:rgba(0,0,0,.12)}
+.portfolio-mini-bar span:first-child{background:var(--amber)}
+.portfolio-mini-body{padding:14px 12px 18px;display:flex;flex-direction:column;gap:6px}
+.portfolio-mini-line{height:6px;border-radius:2px;background:rgba(255,255,255,.08)}
+.portfolio-card[data-case="bluedot"] .portfolio-mini-line,
+.portfolio-card[data-case="soraia"] .portfolio-mini-line{background:rgba(0,0,0,.07)}
+.portfolio-mini-line.ml-title{width:65%;height:10px}
+.portfolio-mini-line.ml-sub{width:85%}
+.portfolio-mini-line.ml-short{width:50%}
+.portfolio-mini-line.ml-btn{width:35%;height:8px;border-radius:2px}
+
+.portfolio-card[data-case="ferreira"] .portfolio-mini-line.ml-title{background:#C9A94E}
+.portfolio-card[data-case="ferreira"] .portfolio-mini-line.ml-btn{background:#C9A94E}
+.portfolio-card[data-case="bluedot"] .portfolio-mini-line.ml-title{background:#1A3A8A}
+.portfolio-card[data-case="bluedot"] .portfolio-mini-line.ml-btn{background:#3D8C3A}
+.portfolio-card[data-case="soraia"] .portfolio-mini-line.ml-title{background:#8B2D2D}
+.portfolio-card[data-case="soraia"] .portfolio-mini-line.ml-btn{background:#8B2D2D}
+
+.portfolio-body{padding:22px 22px 24px;position:relative;z-index:1}
+.portfolio-segment{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:4px 11px;border-radius:999px;
+  border:1px solid var(--black-line);
+  font-family:var(--font-mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;
+  color:#9C9CA3;margin-bottom:12px;
+}
+.portfolio-segment::before{
+  content:"";width:5px;height:5px;border-radius:50%;flex-shrink:0;
+}
+.portfolio-card[data-case="ferreira"] .portfolio-segment::before{background:#C9A94E}
+.portfolio-card[data-case="bluedot"] .portfolio-segment::before{background:#3D8C3A}
+.portfolio-card[data-case="soraia"] .portfolio-segment::before{background:#8B2D2D}
+
+.portfolio-body h3{
+  font-size:1.2rem;text-transform:none;letter-spacing:0;font-weight:700;color:var(--paper);
+  margin-bottom:10px;
+}
+.portfolio-visit{
+  display:inline-flex;align-items:center;gap:6px;
+  font-family:var(--font-mono);font-size:.78rem;color:var(--amber);
+  transition:gap .3s var(--ease);
+}
+.portfolio-card:hover .portfolio-visit{gap:10px}
+.portfolio-visit svg{width:14px;height:14px;flex-shrink:0}
+
+/* ===== CASE MODAL ===== */
+.case-overlay{
+  position:fixed;inset:0;z-index:300;
+  background:rgba(11,11,13,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  display:flex;align-items:center;justify-content:center;padding:24px;
+  opacity:0;pointer-events:none;
+  transition:opacity .3s var(--ease);
+}
+.case-overlay.is-open{opacity:1;pointer-events:auto}
+
+.case-modal{
+  background:var(--black-soft);border:1px solid var(--black-line);border-radius:16px;
+  padding:36px 32px 32px;max-width:380px;width:100%;text-align:center;
+  transform:translateY(16px) scale(.97);
+  transition:transform .35s var(--ease);
+}
+.case-overlay.is-open .case-modal{transform:translateY(0) scale(1)}
+
+.case-modal-icon{
+  width:52px;height:52px;border-radius:50%;margin:0 auto 18px;
+  background:color-mix(in srgb,var(--amber) 12%,transparent);
+  border:1px solid color-mix(in srgb,var(--amber) 30%,transparent);
+  color:var(--amber);display:flex;align-items:center;justify-content:center;
+}
+.case-modal-icon svg{width:22px;height:22px}
+
+.case-modal h4{
+  font-family:var(--font-display);font-weight:800;font-size:1.3rem;color:var(--paper);
+  text-transform:none;letter-spacing:0;margin-bottom:6px;
+}
+.case-modal-url{
+  font-family:var(--font-mono);font-size:.76rem;color:var(--line);
+  word-break:break-all;margin-bottom:28px;display:block;
+}
+.case-modal-actions{display:flex;flex-direction:column;gap:10px}
+.case-modal-actions .btn{justify-content:center}
+.case-modal-actions .btn-ghost{
+  border-color:var(--black-line);color:#9C9CA3;font-size:.85rem;padding:12px 20px;
+}
+.case-modal-actions .btn-ghost:hover{background:var(--black-line);color:var(--paper)}
 </style>
 </head>
 <body>
@@ -711,6 +867,7 @@ footer{background:var(--black-soft);color:#9C9CA3;padding:64px 0 32px;border-top
     <nav class="main-nav" aria-label="Navegação principal">
       <a href="#metodo" data-nav>Método</a>
       <a href="#demonstracao" data-nav>Demonstração</a>
+      <a href="#cases" data-nav>Cases</a>
       <a href="#beneficios" data-nav>Benefícios</a>
       <a href="#depoimentos" data-nav>Depoimentos</a>
       <a href="#investimento" data-nav>Investimento</a>
@@ -734,6 +891,7 @@ footer{background:var(--black-soft);color:#9C9CA3;padding:64px 0 32px;border-top
   <ul>
     <li><a href="#metodo" data-nav-mobile>Método</a></li>
     <li><a href="#demonstracao" data-nav-mobile>Demonstração</a></li>
+    <li><a href="#cases" data-nav-mobile>Cases</a></li>
     <li><a href="#beneficios" data-nav-mobile>Benefícios</a></li>
     <li><a href="#depoimentos" data-nav-mobile>Depoimentos</a></li>
     <li><a href="#investimento" data-nav-mobile>Investimento</a></li>
@@ -764,6 +922,10 @@ footer{background:var(--black-soft);color:#9C9CA3;padding:64px 0 32px;border-top
           <a class="btn btn-primary wa-cta" data-msg="Olá! Vim pelo site da Agência Black e quero saber mais sobre criação de sites." href="https://wa.me/5512981702355">
             <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.34.64 4.53 1.76 6.41L4 29l7.79-1.72A11.94 11.94 0 0 0 16 27c6.627 0 12-5.373 12-12S22.628 3 16.001 3zm0 21.8c-1.98 0-3.83-.55-5.41-1.5l-.39-.23-4.62 1.02 1.03-4.5-.25-.4A9.77 9.77 0 0 1 6.2 15c0-5.4 4.4-9.8 9.8-9.8s9.8 4.4 9.8 9.8-4.4 9.8-9.8 9.8zm5.4-7.34c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.66.15-.2.3-.76.97-.93 1.17-.17.2-.34.22-.64.07-.3-.15-1.24-.46-2.36-1.46-.87-.78-1.46-1.74-1.63-2.04-.17-.3-.02-.46.13-.6.13-.13.3-.34.45-.5.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.66-1.6-.9-2.19-.24-.58-.48-.5-.66-.5-.17 0-.37-.02-.57-.02-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.22 1.35.19 1.86.12.57-.08 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35z"/></svg>
             <span>Chamar no WhatsApp agora</span>
+          </a>
+          <a class="btn btn-ghost" href="#cases">
+            Ver portfólio
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
           </a>
           <p class="hero-trust"><span class="dot-pulse" aria-hidden="true"></span> Resposta em poucos minutos, sem compromisso</p>
         </div>
@@ -939,6 +1101,124 @@ footer{background:var(--black-soft);color:#9C9CA3;padding:64px 0 32px;border-top
 
     </div>
   </section>
+
+  <!-- CASES / PORTFOLIO -->
+  <section class="portfolio on-dark dark-texture" id="cases" style="--glow-x:50%;--glow-y:90%" aria-labelledby="cases-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow eyebrow-light reveal">Portfólio</p>
+        <h2 id="cases-h" class="reveal" style="--d:1">Sites que já <span class="hl-amber-solid">estão no ar</span></h2>
+        <p class="reveal" style="--d:2">Projetos reais criados pela Agência Black. Clique para visitar.</p>
+      </div>
+
+      <div class="portfolio-grid">
+        <article class="portfolio-card reveal" data-case="ferreira" data-url="https://fxrlxn.github.io/ferreira-associados/" data-name="Ferreira &amp; Associados" tabindex="0" role="link">
+          <div class="portfolio-thumb">
+            <div class="portfolio-thumb-bg" aria-hidden="true">
+              <div class="portfolio-mini-browser">
+                <div class="portfolio-mini-bar"><span></span><span></span><span></span></div>
+                <div class="portfolio-mini-body">
+                  <div class="portfolio-mini-line ml-title"></div>
+                  <div class="portfolio-mini-line ml-sub"></div>
+                  <div class="portfolio-mini-line ml-short"></div>
+                  <div class="portfolio-mini-line ml-btn"></div>
+                  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-top:8px">
+                    <div class="portfolio-mini-line" style="height:28px;width:100%"></div>
+                    <div class="portfolio-mini-line" style="height:28px;width:100%"></div>
+                    <div class="portfolio-mini-line" style="height:28px;width:100%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-body">
+            <span class="portfolio-segment">Advocacia empresarial</span>
+            <h3>Ferreira & Associados</h3>
+            <span class="portfolio-visit">
+              Visitar site
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </span>
+          </div>
+        </article>
+
+        <article class="portfolio-card reveal" style="--d:1" data-case="bluedot" data-url="https://fxrlxn.github.io/blue-dot-ingles/" data-name="Blue Dot Inglês" tabindex="0" role="link">
+          <div class="portfolio-thumb">
+            <div class="portfolio-thumb-bg" aria-hidden="true">
+              <div class="portfolio-mini-browser">
+                <div class="portfolio-mini-bar"><span></span><span></span><span></span></div>
+                <div class="portfolio-mini-body">
+                  <div class="portfolio-mini-line ml-title"></div>
+                  <div class="portfolio-mini-line ml-sub"></div>
+                  <div class="portfolio-mini-line ml-short"></div>
+                  <div class="portfolio-mini-line ml-btn"></div>
+                  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-top:8px">
+                    <div class="portfolio-mini-line" style="height:28px;width:100%"></div>
+                    <div class="portfolio-mini-line" style="height:28px;width:100%"></div>
+                    <div class="portfolio-mini-line" style="height:28px;width:100%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-body">
+            <span class="portfolio-segment">Escola de inglês</span>
+            <h3>Blue Dot Inglês</h3>
+            <span class="portfolio-visit">
+              Visitar site
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </span>
+          </div>
+        </article>
+
+        <article class="portfolio-card reveal" style="--d:2" data-case="soraia" data-url="https://fxrlxn.github.io/soraia-de-andrade-advocacia/" data-name="Soraia de Andrade Advocacia" tabindex="0" role="link">
+          <div class="portfolio-thumb">
+            <div class="portfolio-thumb-bg" aria-hidden="true">
+              <div class="portfolio-mini-browser">
+                <div class="portfolio-mini-bar"><span></span><span></span><span></span></div>
+                <div class="portfolio-mini-body">
+                  <div class="portfolio-mini-line ml-title"></div>
+                  <div class="portfolio-mini-line ml-sub"></div>
+                  <div class="portfolio-mini-line ml-short"></div>
+                  <div class="portfolio-mini-line ml-btn"></div>
+                  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-top:8px">
+                    <div class="portfolio-mini-line" style="height:28px;width:100%"></div>
+                    <div class="portfolio-mini-line" style="height:28px;width:100%"></div>
+                    <div class="portfolio-mini-line" style="height:28px;width:100%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-body">
+            <span class="portfolio-segment">Advocacia</span>
+            <h3>Soraia de Andrade</h3>
+            <span class="portfolio-visit">
+              Visitar site
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASE CONFIRM MODAL -->
+  <div class="case-overlay" id="caseOverlay" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="caseModalTitle">
+    <div class="case-modal">
+      <div class="case-modal-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      </div>
+      <h4 id="caseModalTitle"></h4>
+      <span class="case-modal-url" id="caseModalUrl"></span>
+      <div class="case-modal-actions">
+        <a class="btn btn-primary" id="caseModalVisit" href="#" target="_blank" rel="noopener">
+          Visitar site
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
+        <button class="btn btn-ghost" id="caseModalCancel" type="button">Cancelar</button>
+      </div>
+    </div>
+  </div>
 
   <!-- BENEFICIOS -->
   <section class="benefits" id="beneficios" aria-labelledby="benefits-h">
@@ -1140,6 +1420,18 @@ footer{background:var(--black-soft);color:#9C9CA3;padding:64px 0 32px;border-top
             <span class="dif-icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.34.64 4.53 1.76 6.41L4 29l7.79-1.72A11.94 11.94 0 0 0 16 27c6.627 0 12-5.373 12-12S22.628 3 16.001 3zm5.4 14.46c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.66.15-.2.3-.76.97-.93 1.17-.17.2-.34.22-.64.07-.3-.15-1.24-.46-2.36-1.46-.87-.78-1.46-1.74-1.63-2.04-.17-.3-.02-.46.13-.6.13-.13.3-.34.45-.5.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.66-1.6-.9-2.19-.24-.58-.48-.5-.66-.5h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49 1.9.79 2.86.68 3.55.57.57-.08 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35z"/></svg></span>
             <div><h3>Integração com WhatsApp</h3><p>Todo o site é conduzido pra abrir uma conversa direta com você, sem formulário no meio do caminho.</p></div>
           </div>
+          <div class="plan-feat">
+            <span class="dif-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
+            <div><h3>E-mail corporativo</h3><p>Endereço de e-mail profissional com o domínio do seu negócio, passando mais credibilidade em cada mensagem.</p></div>
+          </div>
+          <div class="plan-feat">
+            <span class="dif-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></span>
+            <div><h3>Suporte contínuo</h3><p>Atendimento direto pelo WhatsApp para tirar dúvidas, pedir ajustes ou resolver qualquer questão do seu site.</p></div>
+          </div>
+          <div class="plan-feat">
+            <span class="dif-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg></span>
+            <div><h3>Site 100% personalizável</h3><p>Nada de modelo pronto. Cada elemento é desenhado do zero para refletir a identidade do seu negócio.</p></div>
+          </div>
         </div>
         <div class="plan-panel-cta">
           <a class="btn btn-primary wa-cta" data-msg="Olá! Quero um orçamento pro meu site com a Agência Black." href="https://wa.me/5512981702355">Pedir meu orçamento</a>
@@ -1306,6 +1598,7 @@ footer{background:var(--black-soft);color:#9C9CA3;padding:64px 0 32px;border-top
           <h4>Navegação</h4>
           <a href="#metodo">Método</a>
           <a href="#demonstracao">Demonstração</a>
+          <a href="#cases">Cases</a>
           <a href="#beneficios">Benefícios</a>
         </div>
         <div class="footer-col">
@@ -1464,6 +1757,49 @@ footer{background:var(--black-soft);color:#9C9CA3;padding:64px 0 32px;border-top
         btn.setAttribute("aria-expanded","true");
       }
     });
+  });
+
+  /* portfolio case modal */
+  var caseOverlay = document.getElementById("caseOverlay");
+  var caseModalTitle = document.getElementById("caseModalTitle");
+  var caseModalUrl = document.getElementById("caseModalUrl");
+  var caseModalVisit = document.getElementById("caseModalVisit");
+  var caseModalCancel = document.getElementById("caseModalCancel");
+
+  function openCaseModal(name, url){
+    caseModalTitle.textContent = name;
+    caseModalUrl.textContent = url.replace(/^https?:\/\//, "");
+    caseModalVisit.href = url;
+    caseOverlay.classList.add("is-open");
+    caseOverlay.setAttribute("aria-hidden","false");
+    document.body.style.overflow = "hidden";
+    caseModalVisit.focus();
+  }
+  function closeCaseModal(){
+    caseOverlay.classList.remove("is-open");
+    caseOverlay.setAttribute("aria-hidden","true");
+    document.body.style.overflow = "";
+  }
+
+  document.querySelectorAll(".portfolio-card").forEach(function(card){
+    function trigger(){
+      openCaseModal(card.getAttribute("data-name"), card.getAttribute("data-url"));
+    }
+    card.addEventListener("click", trigger);
+    card.addEventListener("keydown", function(e){
+      if (e.key === "Enter" || e.key === " "){ e.preventDefault(); trigger(); }
+    });
+  });
+
+  caseModalCancel.addEventListener("click", closeCaseModal);
+  caseOverlay.addEventListener("click", function(e){
+    if (e.target === caseOverlay) closeCaseModal();
+  });
+  document.addEventListener("keydown", function(e){
+    if (e.key === "Escape" && caseOverlay.classList.contains("is-open")) closeCaseModal();
+  });
+  caseModalVisit.addEventListener("click", function(){
+    closeCaseModal();
   });
 
   /* floating whatsapp visibility */
