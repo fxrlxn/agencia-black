@@ -757,6 +757,19 @@ footer{background:var(--black-soft);color:#9C9CA3;padding:64px 0 32px;border-top
 .portfolio-card:hover .portfolio-visit{gap:10px}
 .portfolio-visit svg{width:14px;height:14px;flex-shrink:0}
 
+/* Swipe hint (mobile only) */
+.portfolio-swipe{display:none}
+.portfolio-dots{display:flex;align-items:center;justify-content:center;gap:7px}
+.pdot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.22);transition:width .3s var(--ease),background .3s var(--ease)}
+.pdot.is-active{width:20px;border-radius:3px;background:var(--amber)}
+.portfolio-swipe-label{
+  display:inline-flex;align-items:center;gap:7px;
+  font-family:var(--font-mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:#9C9CA3;
+}
+.portfolio-swipe-label svg{width:15px;height:15px;color:var(--amber);animation:swipeNudge 1.4s var(--ease) infinite}
+@keyframes swipeNudge{0%,100%{transform:translateX(0)}50%{transform:translateX(5px)}}
+@media(prefers-reduced-motion: reduce){.portfolio-swipe-label svg{animation:none}}
+
 /* ===== CASE MODAL ===== */
 .case-overlay{
   position:fixed;inset:0;z-index:300;
@@ -844,16 +857,23 @@ footer{background:var(--black-soft);color:#9C9CA3;padding:64px 0 32px;border-top
   .benefit-badge{padding:3px 8px;font-size:.58rem}
   .benefit-accent{margin-top:8px;width:24px;height:2px}
 
-  /* Portfolio: horizontal scroll carousel */
+  /* Portfolio: horizontal scroll carousel — rompe o padding da .wrap
+     para o próximo card "espiar" na borda direita */
   .portfolio-grid{
     grid-template-columns:none;
     display:flex;overflow-x:auto;scroll-snap-type:x mandatory;
-    gap:14px;padding-bottom:12px;
+    gap:14px;
+    margin:0 -24px;padding:4px 24px 12px;
+    scroll-padding-left:24px;
     -webkit-overflow-scrolling:touch;
   }
   .portfolio-grid::-webkit-scrollbar{display:none}
-  .portfolio-card{flex:0 0 80vw;min-width:0;max-width:80vw;scroll-snap-align:start}
+  .portfolio-card{flex:0 0 78vw;min-width:0;max-width:78vw;scroll-snap-align:start}
   .portfolio-thumb{padding:20px 16px}
+  .portfolio-swipe{
+    display:flex;align-items:center;justify-content:space-between;gap:14px;
+    margin-top:22px;
+  }
 
   /* Testimonials: hide on mobile */
   .testi{display:none}
@@ -1187,6 +1207,18 @@ footer{background:var(--black-soft);color:#9C9CA3;padding:64px 0 32px;border-top
             </span>
           </div>
         </article>
+      </div>
+
+      <div class="portfolio-swipe" aria-hidden="true">
+        <div class="portfolio-dots">
+          <span class="pdot is-active"></span>
+          <span class="pdot"></span>
+          <span class="pdot"></span>
+        </div>
+        <span class="portfolio-swipe-label">
+          Arraste para ver mais
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
       </div>
     </div>
   </section>
@@ -1762,6 +1794,25 @@ footer{background:var(--black-soft);color:#9C9CA3;padding:64px 0 32px;border-top
       if (e.key === "Enter" || e.key === " "){ e.preventDefault(); trigger(); }
     });
   });
+
+  /* portfolio carousel: active dot follows scroll */
+  var pGrid = document.querySelector(".portfolio-grid");
+  var pDots = document.querySelectorAll(".pdot");
+  if (pGrid && pDots.length){
+    var pTick = false;
+    pGrid.addEventListener("scroll", function(){
+      if (pTick) return;
+      pTick = true;
+      requestAnimationFrame(function(){
+        var card = pGrid.querySelector(".portfolio-card");
+        var step = card ? card.getBoundingClientRect().width + 14 : 1;
+        var idx = Math.round(pGrid.scrollLeft / step);
+        idx = Math.max(0, Math.min(pDots.length - 1, idx));
+        pDots.forEach(function(d, i){ d.classList.toggle("is-active", i === idx); });
+        pTick = false;
+      });
+    }, { passive:true });
+  }
 
   caseModalCancel.addEventListener("click", closeCaseModal);
   caseOverlay.addEventListener("click", function(e){
