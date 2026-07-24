@@ -706,7 +706,7 @@ footer{background:var(--black-soft);color:#9C9CA3;padding:64px 0 32px;border-top
 
 /* Mini browser mockup inside thumb */
 .portfolio-mini-browser{
-  position:relative;z-index:1;width:100%;
+  position:relative;z-index:1;width:100%;min-width:0;max-width:100%;
   background:rgba(255,255,255,.06);border-radius:8px;overflow:hidden;
   border:1px solid rgba(255,255,255,.08);
   box-shadow:0 16px 40px -12px rgba(0,0,0,.5);
@@ -852,7 +852,8 @@ footer{background:var(--black-soft);color:#9C9CA3;padding:64px 0 32px;border-top
     -webkit-overflow-scrolling:touch;
   }
   .portfolio-grid::-webkit-scrollbar{display:none}
-  .portfolio-card{min-width:78vw;flex-shrink:0;scroll-snap-align:start}
+  .portfolio-card{flex:0 0 80vw;min-width:0;max-width:80vw;scroll-snap-align:start}
+  .portfolio-thumb{padding:20px 16px}
 
   /* Testimonials: hide on mobile */
   .testi{display:none}
