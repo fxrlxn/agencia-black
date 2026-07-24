@@ -426,45 +426,6 @@ section{position:relative;padding:96px 0}
 .flow-step h3{font-size:1.4rem;text-transform:none;font-weight:700;letter-spacing:0;line-height:1.15}
 .flow-step p{color:var(--graphite);max-width:32ch}
 
-/* ===== CASES ===== */
-.cases{background:var(--black);color:var(--paper)}
-
-.demo{margin-bottom:64px}
-.demo-toolbar{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:16px;margin-bottom:24px}
-.demo-toggle{display:inline-flex;border:1px solid var(--black-line);border-radius:2px;overflow:hidden}
-.demo-toggle-btn{
-  display:flex;align-items:center;gap:8px;padding:10px 18px;
-  font-family:var(--font-mono);font-size:.82rem;color:#9C9CA3;
-  transition:background .25s var(--ease),color .25s var(--ease);
-}
-.demo-toggle-btn svg{width:16px;height:16px}
-.demo-toggle-btn.is-active{background:var(--amber);color:var(--amber-ink)}
-.demo-toggle-btn:not(.is-active):hover{background:var(--black-line);color:var(--paper)}
-
-.demo-stage{display:flex;justify-content:center;padding:8px 0 0}
-
-.demo-device{
-  width:100%;max-width:880px;background:#fff;
-  border-radius:10px;overflow:hidden;position:relative;line-height:0;
-  box-shadow:0 50px 90px -30px rgba(0,0,0,.65);
-  transition:max-width .6s var(--ease);
-}
-.demo-device[data-view="mobile"]{max-width:320px}
-.demo-shot{display:none;width:100%;height:auto}
-.demo-device[data-view="desktop"] .demo-shot--desktop{display:block}
-.demo-device[data-view="mobile"] .demo-shot--mobile{display:block}
-
-.demo-fab{
-  position:absolute;right:16px;bottom:16px;width:36px;height:36px;border-radius:50%;
-  background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;
-  box-shadow:0 10px 20px -6px rgba(37,211,102,.6);z-index:3;
-}
-.demo-fab svg{width:18px;height:18px}
-
-.demo-caption{
-  font-family:var(--font-mono);font-size:.78rem;color:var(--line);margin-top:20px;font-style:italic;text-align:center;
-}
-
 /* ===== BENEFICIOS ===== */
 .benefits{background:var(--paper)}
 .dif-icon{
@@ -764,20 +725,10 @@ footer{background:var(--black-soft);color:#9C9CA3;padding:64px 0 32px;border-top
 .portfolio-mini-bar span{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.15)}
 .portfolio-card[data-case="brasa"] .portfolio-mini-bar span{background:rgba(0,0,0,.12)}
 .portfolio-mini-bar span:first-child{background:var(--amber)}
-.portfolio-mini-body{padding:14px 12px 18px;display:flex;flex-direction:column;gap:6px}
-.portfolio-mini-line{height:6px;border-radius:2px;background:rgba(255,255,255,.08)}
-.portfolio-card[data-case="brasa"] .portfolio-mini-line{background:rgba(0,0,0,.07)}
-.portfolio-mini-line.ml-title{width:65%;height:10px}
-.portfolio-mini-line.ml-sub{width:85%}
-.portfolio-mini-line.ml-short{width:50%}
-.portfolio-mini-line.ml-btn{width:35%;height:8px;border-radius:2px}
-
-.portfolio-card[data-case="ferreira"] .portfolio-mini-line.ml-title{background:#C9A94E}
-.portfolio-card[data-case="ferreira"] .portfolio-mini-line.ml-btn{background:#C9A94E}
-.portfolio-card[data-case="brasa"] .portfolio-mini-line.ml-title{background:#E8442A}
-.portfolio-card[data-case="brasa"] .portfolio-mini-line.ml-btn{background:#D99A2B}
-.portfolio-card[data-case="blanc"] .portfolio-mini-line.ml-title{background:#5BA4D9}
-.portfolio-card[data-case="blanc"] .portfolio-mini-line.ml-btn{background:#5BA4D9}
+.portfolio-shot{
+  display:block;width:100%;height:auto;aspect-ratio:16/10;
+  object-fit:cover;object-position:top center;background:#0e0e10;
+}
 
 .portfolio-body{padding:22px 22px 24px;position:relative;z-index:1}
 .portfolio-segment{
@@ -977,8 +928,7 @@ footer{background:var(--black-soft);color:#9C9CA3;padding:64px 0 32px;border-top
 
     <nav class="main-nav" aria-label="Navegação principal">
       <a href="#metodo" data-nav>Método</a>
-      <a href="#demonstracao" data-nav>Demonstração</a>
-      <a href="#cases" data-nav>Cases</a>
+      <a href="#cases" data-nav>Portfólio</a>
       <a href="#beneficios" data-nav>Benefícios</a>
       <a href="#depoimentos" data-nav>Depoimentos</a>
       <a href="#investimento" data-nav>Investimento</a>
@@ -1001,8 +951,7 @@ footer{background:var(--black-soft);color:#9C9CA3;padding:64px 0 32px;border-top
 <nav class="mobile-nav" id="mobileNav" aria-label="Navegação mobile">
   <ul>
     <li><a href="#metodo" data-nav-mobile>Método</a></li>
-    <li><a href="#demonstracao" data-nav-mobile>Demonstração</a></li>
-    <li><a href="#cases" data-nav-mobile>Cases</a></li>
+    <li><a href="#cases" data-nav-mobile>Portfólio</a></li>
     <li><a href="#beneficios" data-nav-mobile>Benefícios</a></li>
     <li><a href="#depoimentos" data-nav-mobile>Depoimentos</a></li>
     <li><a href="#investimento" data-nav-mobile>Investimento</a></li>
@@ -1174,45 +1123,6 @@ footer{background:var(--black-soft);color:#9C9CA3;padding:64px 0 32px;border-top
     </div>
   </section>
 
-  <!-- DEMONSTRACAO -->
-  <section class="cases dark-texture" id="demonstracao" style="--glow-x:15%;--glow-y:90%" aria-labelledby="demo-h">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow eyebrow-light reveal">Demonstração</p>
-        <h2 id="demo-h" class="reveal" style="--d:1">Veja como seu site <span class="hl-amber-solid">pode ficar</span></h2>
-        <p class="reveal" style="--d:2">Alterne entre desktop e celular.</p>
-      </div>
-
-      <!-- Exemplo fictício, não é um cliente real. Substitua pelo site real do cliente quando publicar. -->
-      <div class="demo reveal">
-        <div class="demo-toolbar">
-          <div class="demo-toggle" role="group" aria-label="Alternar entre desktop e celular">
-            <button type="button" class="demo-toggle-btn is-active" data-view="desktop" aria-pressed="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-              Desktop
-            </button>
-            <button type="button" class="demo-toggle-btn" data-view="mobile" aria-pressed="false">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><line x1="10" y1="18" x2="14" y2="18"/></svg>
-              Celular
-            </button>
-          </div>
-        </div>
-
-        <div class="demo-stage">
-          <div class="demo-device" id="demoDevice" data-view="desktop">
-            <img class="demo-shot demo-shot--desktop" src="mock desk.png" alt="Prévia do site fictício na versão desktop">
-            <img class="demo-shot demo-shot--mobile" src="mock mob.png" alt="Prévia do site fictício na versão celular">
-            <span class="demo-fab" aria-hidden="true">
-              <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.34.64 4.53 1.76 6.41L4 29l7.79-1.72A11.94 11.94 0 0 0 16 27c6.627 0 12-5.373 12-12S22.628 3 16.001 3zm5.4 14.46c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.66.15-.2.3-.76.97-.93 1.17-.17.2-.34.22-.64.07-.3-.15-1.24-.46-2.36-1.46-.87-.78-1.46-1.74-1.63-2.04-.17-.3-.02-.46.13-.6.13-.13.3-.34.45-.5.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.66-1.6-.9-2.19-.24-.58-.48-.5-.66-.5h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49 1.9.79 2.86.68 3.55.57.57-.08 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35z"/></svg>
-            </span>
-          </div>
-        </div>
-        <p class="demo-caption">Este é apenas um exemplo fictício de demonstração, não representa um site real.</p>
-      </div>
-
-    </div>
-  </section>
-
   <!-- CASES / PORTFOLIO -->
   <section class="portfolio on-dark dark-texture" id="cases" style="--glow-x:50%;--glow-y:90%" aria-labelledby="cases-h">
     <div class="wrap">
@@ -1225,21 +1135,10 @@ footer{background:var(--black-soft);color:#9C9CA3;padding:64px 0 32px;border-top
       <div class="portfolio-grid">
         <article class="portfolio-card reveal" data-case="ferreira" data-url="https://agenciablack.space/ferreira-e-associados/" data-name="Ferreira &amp; Associados" tabindex="0" role="link">
           <div class="portfolio-thumb">
-            <div class="portfolio-thumb-bg" aria-hidden="true">
-              <div class="portfolio-mini-browser">
-                <div class="portfolio-mini-bar"><span></span><span></span><span></span></div>
-                <div class="portfolio-mini-body">
-                  <div class="portfolio-mini-line ml-title"></div>
-                  <div class="portfolio-mini-line ml-sub"></div>
-                  <div class="portfolio-mini-line ml-short"></div>
-                  <div class="portfolio-mini-line ml-btn"></div>
-                  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-top:8px">
-                    <div class="portfolio-mini-line" style="height:28px;width:100%"></div>
-                    <div class="portfolio-mini-line" style="height:28px;width:100%"></div>
-                    <div class="portfolio-mini-line" style="height:28px;width:100%"></div>
-                  </div>
-                </div>
-              </div>
+            <div class="portfolio-thumb-bg" aria-hidden="true"></div>
+            <div class="portfolio-mini-browser">
+              <div class="portfolio-mini-bar"><span></span><span></span><span></span></div>
+              <img class="portfolio-shot" src="cases/ferreira.jpg" alt="Prévia do site Ferreira &amp; Associados" loading="lazy" width="1080" height="675">
             </div>
           </div>
           <div class="portfolio-body">
@@ -1254,21 +1153,10 @@ footer{background:var(--black-soft);color:#9C9CA3;padding:64px 0 32px;border-top
 
         <article class="portfolio-card reveal" style="--d:1" data-case="brasa" data-url="https://agenciablack.space/brasa-gastronomia/" data-name="BRASA Estúdio" tabindex="0" role="link">
           <div class="portfolio-thumb">
-            <div class="portfolio-thumb-bg" aria-hidden="true">
-              <div class="portfolio-mini-browser">
-                <div class="portfolio-mini-bar"><span></span><span></span><span></span></div>
-                <div class="portfolio-mini-body">
-                  <div class="portfolio-mini-line ml-title"></div>
-                  <div class="portfolio-mini-line ml-sub"></div>
-                  <div class="portfolio-mini-line ml-short"></div>
-                  <div class="portfolio-mini-line ml-btn"></div>
-                  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-top:8px">
-                    <div class="portfolio-mini-line" style="height:28px;width:100%"></div>
-                    <div class="portfolio-mini-line" style="height:28px;width:100%"></div>
-                    <div class="portfolio-mini-line" style="height:28px;width:100%"></div>
-                  </div>
-                </div>
-              </div>
+            <div class="portfolio-thumb-bg" aria-hidden="true"></div>
+            <div class="portfolio-mini-browser">
+              <div class="portfolio-mini-bar"><span></span><span></span><span></span></div>
+              <img class="portfolio-shot" src="cases/brasa.jpg" alt="Prévia do site BRASA Estúdio" loading="lazy" width="1080" height="675">
             </div>
           </div>
           <div class="portfolio-body">
@@ -1283,21 +1171,10 @@ footer{background:var(--black-soft);color:#9C9CA3;padding:64px 0 32px;border-top
 
         <article class="portfolio-card reveal" style="--d:2" data-case="blanc" data-url="https://agenciablack.space/blanc-odontologia/" data-name="Blanc Odontologia" tabindex="0" role="link">
           <div class="portfolio-thumb">
-            <div class="portfolio-thumb-bg" aria-hidden="true">
-              <div class="portfolio-mini-browser">
-                <div class="portfolio-mini-bar"><span></span><span></span><span></span></div>
-                <div class="portfolio-mini-body">
-                  <div class="portfolio-mini-line ml-title"></div>
-                  <div class="portfolio-mini-line ml-sub"></div>
-                  <div class="portfolio-mini-line ml-short"></div>
-                  <div class="portfolio-mini-line ml-btn"></div>
-                  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-top:8px">
-                    <div class="portfolio-mini-line" style="height:28px;width:100%"></div>
-                    <div class="portfolio-mini-line" style="height:28px;width:100%"></div>
-                    <div class="portfolio-mini-line" style="height:28px;width:100%"></div>
-                  </div>
-                </div>
-              </div>
+            <div class="portfolio-thumb-bg" aria-hidden="true"></div>
+            <div class="portfolio-mini-browser">
+              <div class="portfolio-mini-bar"><span></span><span></span><span></span></div>
+              <img class="portfolio-shot" src="cases/blanc.jpg" alt="Prévia do site Blanc Odontologia" loading="lazy" width="1080" height="675">
             </div>
           </div>
           <div class="portfolio-body">
@@ -1708,8 +1585,7 @@ footer{background:var(--black-soft);color:#9C9CA3;padding:64px 0 32px;border-top
         <div class="footer-col">
           <h4>Navegação</h4>
           <a href="#metodo">Método</a>
-          <a href="#demonstracao">Demonstração</a>
-          <a href="#cases">Cases</a>
+          <a href="#cases">Portfólio</a>
           <a href="#beneficios">Benefícios</a>
         </div>
         <div class="footer-col">
@@ -1836,22 +1712,6 @@ footer{background:var(--black-soft);color:#9C9CA3;padding:64px 0 32px;border-top
       windowClip.style.transform = "translate(" + relX + "px," + relY + "px)";
     });
     heroWindow.addEventListener("mouseleave", function(){ windowClip.style.transform = "translate(0,0)"; });
-  }
-
-  /* live demo desktop/mobile toggle */
-  var demoDevice = document.getElementById("demoDevice");
-  var demoButtons = document.querySelectorAll(".demo-toggle-btn");
-  if (demoDevice && demoButtons.length){
-    demoButtons.forEach(function(btn){
-      btn.addEventListener("click", function(){
-        demoDevice.setAttribute("data-view", btn.getAttribute("data-view"));
-        demoButtons.forEach(function(b){
-          var active = b === btn;
-          b.classList.toggle("is-active", active);
-          b.setAttribute("aria-pressed", active ? "true" : "false");
-        });
-      });
-    });
   }
 
   /* faq accordion */
