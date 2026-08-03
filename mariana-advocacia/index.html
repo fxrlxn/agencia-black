@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Escritório de advocacia especializado em Direito Imobiliário, Empresarial, da Saúde e de Família. Mais de 20 anos protegendo negócios e famílias no Vale do Paraíba."/>
+<meta property="og:title" content="Mariana Lopes Advocacia | São José dos Campos"/>
+<meta property="og:description" content="Soluções jurídicas estratégicas e personalizadas no Vale do Paraíba."/>
+<meta property="og:type" content="website"/>
+<title>Mariana Lopes Advocacia | São José dos Campos, SP</title>
+<link rel="icon" type="image/jpeg" href="logo.jpg"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+/* ─── Reset ─── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Inter',system-ui,sans-serif;background:#FAFAF8;color:#111;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+button{cursor:pointer;border:none;background:none;font-family:inherit}
+ul{list-style:none}
+
+/* ─── Variables ─── */
+:root{
+  --cream:#FAFAF8;--dark:#0F0F0F;--dark2:#1A1A1A;--dark3:#0A0A0A;
+  --gold:#852040;--gold-d:#5E1530;--text:#111;--muted:#6B6B6B;--border:#E8E8E6;
+  --serif:'Cormorant Garamond',Georgia,serif;--sans:'Inter',system-ui,sans-serif;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:var(--cream)}
+::-webkit-scrollbar-thumb{background:var(--gold);border-radius:9px}
+::selection{background:rgba(133,32,64,.15)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px}
+
+/* ─── Scroll Reveal ─── */
+.rev{opacity:0;transform:translateY(28px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.rev.in{opacity:1;transform:none}
+.rev.d1{transition-delay:.08s}.rev.d2{transition-delay:.16s}.rev.d3{transition-delay:.24s}
+.rev.d4{transition-delay:.32s}.rev.d5{transition-delay:.40s}
+.rev-l{opacity:0;transform:translateX(-28px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.rev-l.in{opacity:1;transform:none}
+.rev-r{opacity:0;transform:translateX(28px);transition:opacity .85s var(--ease),transform .85s var(--ease)}
+.rev-r.in{opacity:1;transform:none}
+
+/* ─── Layout ─── */
+.wrap{max-width:1200px;margin:0 auto;padding:0 28px}
+@media(max-width:640px){.wrap{padding:0 20px}}
+
+/* ─── Utilities ─── */
+.gold-bar{width:36px;height:2px;background:var(--gold)}
+.sec-label{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.sec-label::before{content:'';width:28px;height:1px;background:var(--gold)}
+.sec-label span{color:var(--gold);font-size:11px;letter-spacing:.26em;text-transform:uppercase;font-weight:600}
+.grain::after{content:'';position:absolute;inset:0;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E");background-size:200px 200px}
+
+/* ─── Buttons ─── */
+.btn-gold{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:#fff;font-weight:600;font-size:15px;padding:15px 32px;border-radius:99px;transition:background .25s,transform .2s,box-shadow .25s;box-shadow:0 8px 28px rgba(133,32,64,.28);white-space:nowrap}
+.btn-gold:hover{background:var(--gold-d);transform:scale(1.03)}
+.btn-gold:active{transform:scale(.99)}
+.btn-outline{display:inline-flex;align-items:center;gap:8px;color:rgba(255,255,255,.65);font-size:15px;padding:15px 28px;border-radius:99px;border:1px solid rgba(255,255,255,.18);transition:border-color .25s,color .25s}
+.btn-outline:hover{border-color:rgba(255,255,255,.4);color:#fff}
+.btn-dark{display:inline-flex;align-items:center;gap:8px;background:var(--text);color:#fff;font-weight:600;font-size:14px;padding:13px 26px;border-radius:99px;transition:background .25s,transform .2s}
+.btn-dark:hover{background:var(--dark2);transform:scale(1.03)}
+
+/* ════════════════════════════════
+   NAVBAR
+════════════════════════════════ */
+#nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:72px;transition:background .4s,border-color .4s,backdrop-filter .4s;border-bottom:1px solid transparent}
+#nav.stuck{background:rgba(15,15,15,.96);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom-color:rgba(255,255,255,.08)}
+.nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{display:flex;flex-direction:column;line-height:1}
+.nav-logo-n{font-family:var(--serif);font-size:17px;color:#fff;font-weight:600;transition:color .2s}
+.nav-logo-n:hover{color:rgba(255,255,255,.85)}
+.nav-logo-s{font-size:10px;color:var(--gold);letter-spacing:.22em;text-transform:uppercase;margin-top:3px}
+.nav-links{display:flex;align-items:center;gap:28px}
+.nav-links a{color:rgba(255,255,255,.6);font-size:14px;transition:color .2s;position:relative;padding:2px 0}
+.nav-links a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1px;background:var(--gold);transition:width .3s ease}
+.nav-links a:hover{color:#fff}
+.nav-links a:hover::after{width:100%}
+.nav-actions{display:flex;align-items:center;gap:18px}
+.nav-phone{color:rgba(255,255,255,.45);font-size:13px;display:flex;align-items:center;gap:6px;transition:color .2s}
+.nav-phone:hover{color:rgba(255,255,255,.8)}
+.nav-cta{background:var(--gold);color:#fff;font-size:13px;font-weight:600;padding:10px 22px;border-radius:99px;transition:background .25s,transform .2s;white-space:nowrap}
+.nav-cta:hover{background:var(--gold-d);transform:scale(1.05)}
+.nav-ham{display:none;color:#fff;padding:8px;line-height:0}
+/* Mobile menu */
+#mob-menu{display:none;position:fixed;top:72px;left:0;right:0;background:var(--dark);border-bottom:1px solid rgba(255,255,255,.08);z-index:999;overflow:hidden;max-height:0;transition:max-height .4s var(--ease)}
+#mob-menu.open{max-height:600px}
+.mob-inner{padding:24px 20px;display:flex;flex-direction:column;gap:0}
+.mob-inner a.mob-link{color:rgba(255,255,255,.75);font-family:var(--serif);font-size:22px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.08);display:block;transition:color .2s}
+.mob-inner a.mob-link:hover{color:#fff}
+.mob-cta{margin-top:24px;background:var(--gold);color:#fff;font-weight:600;font-size:16px;padding:18px;border-radius:99px;text-align:center;display:block}
+@media(max-width:900px){
+  .nav-links,.nav-actions{display:none}
+  .nav-ham{display:block}
+  #mob-menu{display:block}
+}
+
+/* ════════════════════════════════
+   HERO
+════════════════════════════════ */
+#hero{min-height:100dvh;background:linear-gradient(150deg,#3D0B1C 0%,#1E0610 55%,#0D0308 100%);display:flex;flex-direction:column;position:relative;overflow:hidden}
+.hero-grad{position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,0,.18) 0%,transparent 60%);pointer-events:none}
+.hero-glow{position:absolute;top:0;right:0;width:65%;height:100%;background:radial-gradient(ellipse at top right,rgba(133,32,64,.35) 0%,rgba(133,32,64,.08) 45%,transparent 70%);pointer-events:none}
+.hero-ghost{position:absolute;bottom:-10px;left:0;right:0;overflow:hidden;pointer-events:none;user-select:none}
+.hero-ghost span{display:block;font-family:var(--serif);font-weight:900;font-size:clamp(80px,22vw,280px);color:rgba(255,255,255,.018);line-height:.85;letter-spacing:-.02em;padding-left:4px}
+.hero-spacer{height:72px;flex-shrink:0}
+.hero-body{position:relative;z-index:2;flex:1;display:flex;align-items:center}
+.hero-grid{width:100%;display:grid;grid-template-columns:1fr 420px;gap:64px;align-items:center;padding:80px 0}
+/* Left copy */
+.hero-badge{display:flex;align-items:center;gap:12px;margin-bottom:28px}
+.hero-badge::before{content:'';width:32px;height:1px;background:rgba(255,255,255,.35)}
+.hero-badge span{color:rgba(255,255,255,.55);font-size:11px;letter-spacing:.26em;text-transform:uppercase;font-weight:500}
+.hero-hl{display:flex;flex-direction:column;gap:4px;margin-bottom:22px}
+.hero-hl h1{font-family:var(--serif);font-size:clamp(2.2rem,4.5vw,3.8rem);font-weight:700;line-height:1.06;letter-spacing:-.02em;color:#fff}
+.hero-hl h1.gold{color:rgba(255,255,255,.85);font-style:italic}
+.hero-sub{color:rgba(255,255,255,.5);font-size:clamp(1rem,1.4vw,1.08rem);line-height:1.72;max-width:440px;margin-bottom:32px}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:48px}
+.hero-trust{display:flex;align-items:center;gap:24px;padding-top:28px;border-top:1px solid rgba(255,255,255,.1)}
+.trust-item{display:flex;flex-direction:column;gap:3px}
+.trust-val{font-family:var(--serif);font-size:22px;color:#fff;font-weight:700}
+.trust-lbl{color:rgba(255,255,255,.32);font-size:11px;white-space:nowrap}
+.trust-sep{width:1px;height:32px;background:rgba(255,255,255,.1)}
+/* Right logo */
+.hero-logo-wrap{position:relative;display:flex;align-items:center;justify-content:center}
+.hero-logo-outer{position:absolute;top:-18px;right:-18px;bottom:18px;left:18px;border:1px solid rgba(255,255,255,.07);border-radius:26px;pointer-events:none}
+.hero-logo-frame{position:relative;border-radius:22px;overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.09);width:100%}
+.hero-logo-frame img{width:100%;height:auto;display:block}
+.hero-logo-shine{position:absolute;top:0;left:-80%;width:45%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.055),transparent);transform:skewX(-12deg);animation:shine 5s ease-in-out infinite}
+@keyframes shine{0%,70%,100%{left:-80%}40%{left:140%}}
+/* Scroll */
+.hero-scroll{position:relative;z-index:2;display:flex;justify-content:center;padding-bottom:28px}
+.hero-scroll a{display:flex;flex-direction:column;align-items:center;gap:6px;color:rgba(255,255,255,.2);transition:color .2s}
+.hero-scroll a:hover{color:rgba(255,255,255,.45)}
+.scroll-lbl{font-size:10px;letter-spacing:.2em;text-transform:uppercase}
+.scroll-arr{animation:arr 2.2s ease-in-out infinite}
+@keyframes arr{0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}
+/* Hero enter anims */
+@keyframes hUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+.ha{opacity:0;animation:hUp .75s var(--ease) forwards}
+.ha1{animation-delay:.2s}.ha2{animation-delay:.3s}.ha3{animation-delay:.4s}
+.ha4{animation-delay:.5s}.ha5{animation-delay:.65s}.ha6{animation-delay:.82s}
+@keyframes hRight{from{opacity:0;transform:translateX(32px) scale(.97)}to{opacity:1;transform:none}}
+.ha-photo{opacity:0;animation:hRight 1s var(--ease) .35s forwards}
+@media(max-width:1100px){.hero-grid{grid-template-columns:1fr 360px;gap:44px}}
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr;padding:40px 0 64px;gap:40px}
+  .hero-logo-wrap{max-width:320px;width:100%;margin:0 auto;order:-1}
+  .hero-logo-outer{display:none}
+  .hero-hl h1{font-size:clamp(2rem,7.5vw,3rem)}
+}
+
+/* ════════════════════════════════
+   AREAS
+════════════════════════════════ */
+#areas{padding:96px 0 120px;background:var(--cream)}
+.areas-hdr{margin-bottom:56px;max-width:520px}
+.areas-hdr h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3.2rem);font-weight:700;color:var(--text);line-height:1.1;letter-spacing:-.02em}
+.areas-hdr p{margin-top:16px;color:var(--muted);font-size:1.05rem;line-height:1.7}
+.areas-grid{display:grid;grid-template-columns:380px 1fr;gap:18px;align-items:start}
+/* Tabs */
+.areas-tabs{display:flex;flex-direction:column;gap:6px}
+.atab{display:flex;align-items:center;gap:16px;padding:17px 19px;border-radius:14px;text-align:left;transition:background .25s;cursor:pointer}
+.atab:hover:not(.active){background:rgba(15,15,15,.055)}
+.atab.active{background:var(--dark)}
+.atab-icon{flex-shrink:0;width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:rgba(15,15,15,.07);color:var(--gold);transition:background .25s}
+.atab.active .atab-icon{background:var(--gold);color:#fff}
+.atab-icon svg{width:17px;height:17px;stroke:currentColor;stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.atab-text{flex:1;min-width:0}
+.atab-num{font-size:10px;font-family:monospace;letter-spacing:.12em;color:#AAA;transition:color .25s}
+.atab.active .atab-num{color:var(--gold)}
+.atab-title{font-family:var(--serif);font-size:17px;font-weight:600;color:var(--text);line-height:1.25;transition:color .25s}
+.atab.active .atab-title{color:#fff}
+.atab-arr{color:rgba(0,0,0,.22);transition:color .25s,transform .25s}
+.atab.active .atab-arr{color:var(--gold);transform:translateX(3px)}
+.atab-arr svg{width:15px;height:15px;stroke:currentColor;stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round}
+/* Panels */
+.apanel{display:none;background:#fff;border-radius:20px;padding:40px 44px;border:1px solid var(--border);box-shadow:0 2px 18px rgba(0,0,0,.05);animation:panIn .38s var(--ease)}
+.apanel.active{display:block}
+@keyframes panIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.apanel-num{font-size:10px;font-family:monospace;color:rgba(133,32,64,.7);letter-spacing:.12em;margin-bottom:10px}
+.apanel h3{font-family:var(--serif);font-size:clamp(1.5rem,2.4vw,2rem);font-weight:700;color:var(--text);line-height:1.15;margin-bottom:14px}
+.apanel-desc{color:var(--muted);font-size:15px;line-height:1.72;margin-bottom:26px}
+.apanel-div{width:38px;height:2px;background:var(--gold);margin-bottom:22px}
+.apanel ul{display:flex;flex-direction:column;gap:10px}
+.apanel li{display:flex;align-items:flex-start;gap:12px}
+.apanel li::before{content:'';flex-shrink:0;width:6px;height:6px;border-radius:50%;background:var(--gold);margin-top:8px}
+.apanel li span{color:#444;font-size:14px;line-height:1.62}
+.apanel-foot{margin-top:26px;padding-top:18px;border-top:1px solid var(--border)}
+.apanel-cta{display:inline-flex;align-items:center;gap:6px;color:var(--gold);font-size:14px;font-weight:600;transition:color .2s,gap .2s}
+.apanel-cta:hover{color:var(--gold-d);gap:10px}
+.apanel-cta svg{width:15px;height:15px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+@media(max-width:900px){
+  .areas-grid{grid-template-columns:1fr}
+  .apanel{padding:28px 22px}
+}
+
+/* ════════════════════════════════
+   ABOUT
+════════════════════════════════ */
+#sobre{padding:96px 0 120px;background:var(--dark);position:relative;overflow:hidden}
+.sobre-bg{position:absolute;top:0;right:0;width:40%;height:100%;background:radial-gradient(ellipse at right top,rgba(133,32,64,.06) 0%,transparent 60%);pointer-events:none}
+#sobre .wrap{position:relative;z-index:1}
+.sobre-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+/* Photo */
+.sobre-photo{position:relative}
+.sobre-photo-border{position:absolute;top:-16px;left:-16px;width:100%;height:100%;border:1px solid rgba(133,32,64,.18);border-radius:20px;pointer-events:none}
+.sobre-photo-inner{position:relative;border-radius:20px;overflow:hidden;aspect-ratio:4/5}
+.sobre-photo-inner img{width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform .7s ease}
+.sobre-photo-inner:hover img{transform:scale(1.04)}
+.sobre-photo-vig{position:absolute;inset:0;background:linear-gradient(to top,rgba(15,15,15,.68) 0%,transparent 60%)}
+.sobre-badge{position:absolute;bottom:-22px;right:-22px;background:var(--gold);color:#fff;padding:18px 22px;border-radius:16px;box-shadow:0 12px 40px rgba(133,32,64,.35)}
+.sobre-badge-n{font-family:var(--serif);font-size:30px;font-weight:700;line-height:1}
+.sobre-badge-l{font-size:11px;color:rgba(255,255,255,.75);margin-top:4px;white-space:nowrap}
+/* Content */
+.sobre-content{display:flex;flex-direction:column;gap:26px}
+.sobre-name{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;color:#fff;line-height:1.1}
+.sobre-bio{display:flex;flex-direction:column;gap:16px}
+.sobre-bio p{color:rgba(255,255,255,.6);font-size:15.5px;line-height:1.75}
+.sobre-bio strong{color:rgba(255,255,255,.85);font-weight:600}
+.sobre-quote{border-left:2px solid var(--gold);padding:4px 0 4px 20px}
+.sobre-quote p{font-family:var(--serif);font-size:18px;color:#fff;font-style:italic;line-height:1.65}
+.sobre-creds{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding-top:20px;border-top:1px solid rgba(255,255,255,.1)}
+/* overlay mobile: label + nome em cima da foto */
+.sobre-photo-overlay{display:none;position:absolute;top:0;left:0;right:0;padding:26px 22px 64px;z-index:2;background:linear-gradient(to bottom,rgba(10,10,10,.88) 0%,rgba(10,10,10,.5) 55%,transparent 100%);flex-direction:column;gap:10px}
+.sobre-photo-overlay .sec-label{margin-bottom:0}
+.sobre-photo-overlay .sobre-name{font-size:clamp(1.6rem,6vw,2.1rem)}
+.cred{display:flex;flex-direction:column;gap:8px}
+.cred-ico{color:var(--gold)}
+.cred-ico svg{width:17px;height:17px;stroke:currentColor;stroke-width:1.5;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.cred-lbl{color:#fff;font-weight:600;font-size:13px;line-height:1.3}
+.cred-sub{color:rgba(255,255,255,.35);font-size:11.5px;line-height:1.4}
+@media(max-width:900px){
+  .sobre-grid{grid-template-columns:1fr;gap:48px}
+  .sobre-photo{max-width:400px}
+  .sobre-badge{bottom:-12px;right:-12px}
+  .sobre-creds{grid-template-columns:repeat(2,1fr)}
+  /* mobile: mostra overlay na foto, esconde header no texto */
+  .sobre-photo-overlay{display:flex}
+  .sobre-hdr{display:none}
+}
+
+/* ════════════════════════════════
+   STATS
+════════════════════════════════ */
+#stats{padding:80px 0 96px;background:var(--cream);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:40px}
+.stat{display:flex;flex-direction:column;gap:7px}
+.stat-val{font-family:var(--serif);font-size:clamp(2.4rem,4vw,3.4rem);font-weight:700;color:var(--gold);line-height:1;flex:1;display:flex;align-items:flex-end}
+.stat-bar{width:30px;height:2px;background:var(--gold);margin:4px 0}
+.stat-lbl{color:var(--text);font-weight:600;font-size:13.5px}
+.stat-sub{color:var(--muted);font-size:12px;line-height:1.5}
+@media(max-width:860px){.stats-grid{grid-template-columns:repeat(2,1fr);gap:36px 28px}}
+
+/* ════════════════════════════════
+   PROCESS
+════════════════════════════════ */
+#processo{padding:96px 0 120px;background:#111;position:relative;overflow:hidden}
+.proc-bg{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(133,32,64,.05) 0%,transparent 65%);pointer-events:none}
+#processo .wrap{position:relative;z-index:1}
+.proc-hdr{margin-bottom:64px;display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.proc-hdr h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3.2rem);font-weight:700;color:#fff;line-height:1.1;letter-spacing:-.02em}
+.proc-hdr-r{color:rgba(255,255,255,.45);font-size:15px;line-height:1.65;max-width:340px}
+.proc-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;position:relative}
+.proc-steps::before{content:'';position:absolute;top:37px;left:calc(12.5% + 20px);right:calc(12.5% + 20px);height:1px;background:linear-gradient(to right,transparent,rgba(133,32,64,.25),transparent)}
+.step{display:flex;flex-direction:column;gap:20px}
+.step-ico-wrap{position:relative;align-self:flex-start}
+.step-ico{width:74px;height:74px;border-radius:18px;background:rgba(26,26,26,.9);border:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:var(--gold);transition:border-color .3s}
+.step-ico:hover{border-color:rgba(133,32,64,.38)}
+.step-ico svg{width:22px;height:22px;stroke:currentColor;stroke-width:1.5;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.step-badge{position:absolute;top:-8px;right:-8px;width:22px;height:22px;border-radius:50%;background:#111;border:1px solid rgba(133,32,64,.3);display:flex;align-items:center;justify-content:center;font-size:9px;font-family:monospace;font-weight:700;color:var(--gold)}
+.step-txt{display:flex;flex-direction:column;gap:8px}
+.step-num{font-size:10px;font-family:monospace;color:rgba(133,32,64,.55);letter-spacing:.12em}
+.step-title{font-family:var(--serif);font-size:19px;font-weight:600;color:#fff;line-height:1.25}
+.step-desc{color:rgba(255,255,255,.45);font-size:14px;line-height:1.7}
+.proc-bot{margin-top:68px;padding-top:36px;border-top:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.proc-bot p{color:rgba(255,255,255,.5);font-size:16px;line-height:1.65;max-width:440px}
+@media(max-width:900px){
+  .proc-steps{grid-template-columns:repeat(2,1fr)}
+  .proc-steps::before{display:none}
+  .proc-hdr{flex-direction:column;align-items:flex-start}
+}
+@media(max-width:540px){.proc-steps{grid-template-columns:1fr}}
+
+/* ════════════════════════════════
+   FAQ
+════════════════════════════════ */
+#faq{padding:96px 0 120px;background:var(--cream)}
+.faq-grid{display:grid;grid-template-columns:320px 1fr;gap:80px}
+.faq-side{position:sticky;top:110px;align-self:flex-start}
+.faq-side h2{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;color:var(--text);line-height:1.15;margin-bottom:18px}
+.faq-side p{color:var(--muted);font-size:15px;line-height:1.7;margin-bottom:28px}
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-item:first-child{border-top:1px solid var(--border)}
+.faq-btn{width:100%;padding:22px 0;display:flex;align-items:center;justify-content:space-between;gap:20px;text-align:left;cursor:pointer}
+.faq-q{font-family:var(--serif);font-size:clamp(1rem,1.4vw,1.07rem);color:#333;line-height:1.4;transition:color .2s}
+.faq-item.open .faq-q,.faq-btn:hover .faq-q{color:var(--text)}
+.faq-ico{flex-shrink:0;width:32px;height:32px;border-radius:50%;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:#AAA;transition:border-color .25s,background .25s,color .25s}
+.faq-item.open .faq-ico{background:var(--gold);border-color:var(--gold);color:#fff}
+.faq-btn:hover:not(.open-b) .faq-ico{border-color:var(--gold);color:var(--gold)}
+.faq-ico svg{width:13px;height:13px;stroke:currentColor;stroke-width:2.5;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.faq-ans{overflow:hidden;max-height:0;transition:max-height .4s var(--ease),opacity .3s ease;opacity:0}
+.faq-item.open .faq-ans{max-height:400px;opacity:1}
+.faq-ans-in{padding-bottom:22px;padding-right:52px}
+.faq-ans-in p{color:var(--muted);font-size:15px;line-height:1.75}
+@media(max-width:860px){
+  .faq-grid{grid-template-columns:1fr;gap:40px}
+  .faq-side{position:static}
+  .faq-ans-in{padding-right:20px}
+}
+
+/* ════════════════════════════════
+   FINAL CTA
+════════════════════════════════ */
+#cta{padding:96px 0 112px;background:var(--dark);position:relative;overflow:hidden}
+.cta-glow{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:600px;height:300px;background:radial-gradient(ellipse at bottom,rgba(133,32,64,.1) 0%,transparent 65%);pointer-events:none}
+.cta-ghost{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;user-select:none;overflow:hidden}
+.cta-ghost span{font-family:var(--serif);font-weight:900;font-size:clamp(90px,20vw,300px);color:rgba(255,255,255,.02);letter-spacing:-.03em}
+#cta .wrap{position:relative;z-index:1}
+.cta-cnt{text-align:center;max-width:800px;margin:0 auto}
+.cta-lbl{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:28px}
+.cta-lbl::before,.cta-lbl::after{content:'';width:32px;height:1px;background:var(--gold)}
+.cta-lbl span{color:var(--gold);font-size:11px;letter-spacing:.26em;text-transform:uppercase;font-weight:600}
+.cta-h{font-family:var(--serif);font-size:clamp(2.2rem,5vw,4rem);font-weight:700;color:#fff;line-height:1.08;letter-spacing:-.02em;margin-bottom:22px}
+.cta-h span{color:var(--gold)}
+.cta-sub{color:rgba(255,255,255,.5);font-size:clamp(1rem,1.4vw,1.15rem);line-height:1.7;max-width:540px;margin:0 auto 48px}
+.cta-btns{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:56px}
+.cta-details{display:flex;align-items:center;justify-content:center;gap:28px;flex-wrap:wrap;padding-top:36px;border-top:1px solid rgba(255,255,255,.1);text-align:center}
+.cta-det{justify-content:center}
+.cta-det{display:flex;align-items:center;gap:8px;color:rgba(255,255,255,.38);font-size:13px;transition:color .2s}
+.cta-det:hover{color:rgba(255,255,255,.7)}
+.cta-det svg{width:13px;height:13px;stroke:var(--gold);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.cta-dot{width:3px;height:3px;border-radius:50%;background:rgba(255,255,255,.15)}
+@media(max-width:640px){.cta-dot{display:none}.cta-details{flex-direction:column;gap:16px}}
+
+/* ════════════════════════════════
+   FOOTER
+════════════════════════════════ */
+footer{background:var(--dark3);border-top:1px solid rgba(255,255,255,.08);padding:60px 0 28px}
+.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1.4fr;gap:40px;margin-bottom:48px}
+.footer-brand-n{font-family:var(--serif);font-size:19px;color:#fff;font-weight:600}
+.footer-brand-s{font-size:10px;color:var(--gold);letter-spacing:.22em;text-transform:uppercase;margin:4px 0 18px}
+.footer-brand-d{color:rgba(255,255,255,.4);font-size:13px;line-height:1.7;max-width:240px;margin-bottom:20px}
+.footer-soc{display:flex;gap:10px}
+.fsoc{width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.4);transition:border-color .2s,color .2s}
+.fsoc:hover{border-color:var(--gold);color:var(--gold)}
+.fsoc svg{width:14px;height:14px;stroke:currentColor;stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.footer-ttl{color:#fff;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;margin-bottom:18px}
+.footer-nav-list{display:flex;flex-direction:column;gap:10px}
+.footer-nav-list a{color:rgba(255,255,255,.42);font-size:13.5px;transition:color .2s}
+.footer-nav-list a:hover{color:rgba(255,255,255,.8)}
+.footer-contacts{display:flex;flex-direction:column;gap:11px}
+.fcon{display:flex;align-items:flex-start;gap:10px;color:rgba(255,255,255,.4);font-size:13px;line-height:1.5;transition:color .2s}
+.fcon:hover{color:rgba(255,255,255,.7)}
+.fcon svg{width:13px;height:13px;stroke:var(--gold);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;margin-top:2px}
+.footer-bot{padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.footer-bot p{color:rgba(255,255,255,.2);font-size:12px}
+@media(max-width:860px){
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .footer-brand{grid-column:1/-1}
+}
+@media(max-width:540px){.footer-grid{grid-template-columns:1fr}}
+
+/* ════════════════════════════════
+   WHATSAPP FLOAT
+════════════════════════════════ */
+#waf{position:fixed;bottom:24px;right:20px;z-index:900;display:flex;flex-direction:column;align-items:flex-end;gap:12px;opacity:0;pointer-events:none;transition:opacity .35s,transform .35s var(--ease);transform:translateY(20px) scale(.9)}
+#waf.show{opacity:1;pointer-events:all;transform:none}
+.waf-tip{background:#fff;border:1px solid var(--border);border-radius:16px;padding:14px 18px;max-width:220px;box-shadow:0 8px 40px rgba(0,0,0,.12);position:relative;opacity:0;transform:scale(.9) translateY(8px);transition:opacity .3s,transform .3s var(--ease);pointer-events:none}
+.waf-tip.show{opacity:1;transform:none;pointer-events:all}
+.waf-tip-x{position:absolute;top:9px;right:9px;color:#AAA;transition:color .2s;cursor:pointer;line-height:0}
+.waf-tip-x:hover{color:#555}
+.waf-tip-x svg{width:12px;height:12px;stroke:currentColor;stroke-width:2.5;fill:none;stroke-linecap:round}
+.waf-tip-t{font-size:13px;font-weight:600;color:var(--text);margin-bottom:4px;padding-right:14px}
+.waf-tip-s{font-size:12px;color:var(--muted);line-height:1.5}
+.waf-tip-arr{position:absolute;bottom:-7px;right:26px;width:14px;height:14px;background:#fff;border-right:1px solid var(--border);border-bottom:1px solid var(--border);transform:rotate(45deg)}
+.waf-btn{width:56px;height:56px;background:#25D366;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 24px rgba(0,0,0,.2);transition:background .2s,transform .2s}
+.waf-btn:hover{background:#1ebe5c;transform:scale(1.1)}
+.waf-btn:active{transform:scale(.94)}
+.waf-btn svg{width:26px;height:26px}
+
+/* ════════════════════════════════
+   LOCALIZAÇÃO
+════════════════════════════════ */
+#localizacao{padding:0;background:var(--dark3)}
+.loc-inner{display:grid;grid-template-columns:1fr 1fr;min-height:480px}
+.loc-info{padding:64px 56px;display:flex;flex-direction:column;justify-content:center;gap:28px;background:var(--dark2)}
+.loc-info h2{font-family:var(--serif);font-size:clamp(1.6rem,2.5vw,2.4rem);font-weight:700;color:#fff;line-height:1.15}
+.loc-info p{color:rgba(255,255,255,.5);font-size:15px;line-height:1.7}
+.loc-details{display:flex;flex-direction:column;gap:14px}
+.loc-row{display:flex;align-items:flex-start;gap:12px;color:rgba(255,255,255,.55);font-size:14px;line-height:1.55}
+.loc-row svg{width:15px;height:15px;stroke:var(--gold);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;margin-top:2px}
+.loc-row a{color:rgba(255,255,255,.55);transition:color .2s}
+.loc-row a:hover{color:#fff}
+.loc-row strong{color:rgba(255,255,255,.8);font-weight:600}
+.loc-map{position:relative;overflow:hidden}
+.loc-map iframe{width:100%;height:100%;border:0;display:block;filter:grayscale(30%) contrast(1.05) brightness(0.9)}
+.loc-map-overlay{position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 0 1px rgba(133,32,64,.15)}
+@media(max-width:860px){
+  .loc-inner{grid-template-columns:1fr;min-height:auto}
+  .loc-info{padding:48px 28px}
+  .loc-map{height:360px}
+}
+@media(max-width:540px){
+  .loc-info{padding:40px 20px}
+  .loc-map{height:280px}
+}
+</style>
+</head>
+<body>
+
+<!-- ════ NAVBAR ════ -->
+<header id="nav" role="banner">
+  <div class="wrap nav-inner">
+    <a href="index.html#" class="nav-logo" aria-label="Mariana Lopes Advocacia - inicio">
+      <img src="mari%20lop.png" alt="Mariana Lopes Advocacia" style="height:38px;width:auto;display:block"/>
+    </a>
+    <nav class="nav-links" aria-label="Navegação principal">
+      <a href="index.html#areas">Áreas de Atuação</a>
+      <a href="index.html#sobre">Sobre</a>
+      <a href="index.html#processo">Como Trabalhamos</a>
+      <a href="index.html#faq">FAQ</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="tel:+551232099039" class="nav-phone">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.7A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.91a16 16 0 006 6l1.27-.51a2 2 0 012.11.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        (12) 3209-9039
+      </a>
+      <a href="https://wa.me/5512981210501?text=Ol%C3%A1%2C+Dra.+Mariana%21+Gostaria+de+agendar+uma+consulta." target="_blank" rel="noopener noreferrer" class="nav-cta">Fale Conosco</a>
+    </div>
+    <button class="nav-ham" id="ham-btn" aria-label="Abrir menu" aria-expanded="false" aria-controls="mob-menu">
+      <svg id="ham-ico" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <svg id="close-ico" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+</header>
+<div id="mob-menu" role="navigation" aria-label="Menu mobile">
+  <div class="mob-inner">
+    <a href="index.html#areas" class="mob-link">Áreas de Atuação</a>
+    <a href="index.html#sobre" class="mob-link">Sobre</a>
+    <a href="index.html#processo" class="mob-link">Como Trabalhamos</a>
+    <a href="index.html#faq" class="mob-link">FAQ</a>
+    <a href="https://wa.me/5512981210501?text=Ol%C3%A1%2C+Dra.+Mariana%21+Gostaria+de+agendar+uma+consulta." target="_blank" rel="noopener noreferrer" class="mob-cta">Agendar pelo WhatsApp</a>
+  </div>
+</div>
+
+<!-- ════ HERO ════ -->
+<section id="hero" aria-label="Apresentação">
+  <div class="hero-grad" aria-hidden="true"></div>
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="hero-ghost" aria-hidden="true"><span>ADVOCACIA</span></div>
+  <div class="hero-spacer"></div>
+  <div class="hero-body">
+    <div class="wrap">
+      <div class="hero-grid">
+        <!-- Copy -->
+        <div>
+          <div class="hero-badge ha ha1">
+            <span>São José dos Campos, SP</span>
+          </div>
+          <div class="hero-hl">
+            <h1 class="ha ha2">Segurança jurídica</h1>
+            <h1 class="gold ha ha3">para as decisões</h1>
+            <h1 class="ha ha4">mais importantes.</h1>
+          </div>
+          <p class="hero-sub ha ha5">Soluções estratégicas e personalizadas em Direito Imobiliário, Empresarial, da Saúde e de Família. Mais de 20 anos protegendo negócios e famílias no Vale do Paraíba.</p>
+          <div class="hero-btns ha ha6">
+            <a href="https://wa.me/5512981210501?text=Ol%C3%A1%2C+Dra.+Mariana%21+Gostaria+de+agendar+uma+consulta." target="_blank" rel="noopener noreferrer" class="btn-gold">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+              Agendar Consulta
+            </a>
+            <a href="index.html#areas" class="btn-outline">Ver Áreas de Atuação</a>
+          </div>
+          <div class="hero-trust ha ha6">
+            <div class="trust-item"><span class="trust-val">20+</span><span class="trust-lbl">Anos de experiência</span></div>
+            <div class="trust-sep" aria-hidden="true"></div>
+            <div class="trust-item"><span class="trust-val">OAB/SP</span><span class="trust-lbl">Certificada</span></div>
+            <div class="trust-sep" aria-hidden="true"></div>
+            <div class="trust-item"><span class="trust-val">4</span><span class="trust-lbl">Áreas de atuação</span></div>
+          </div>
+        </div>
+        <!-- Brand logo -->
+        <div class="hero-logo-wrap ha-photo">
+          <div class="hero-logo-outer" aria-hidden="true"></div>
+          <div class="hero-logo-frame">
+            <img src="logo.jpg" alt="Mariana Lopes Advocacia" loading="eager"/>
+            <div class="hero-logo-shine" aria-hidden="true"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <a href="index.html#areas" tabindex="-1" aria-hidden="true">
+      <span class="scroll-lbl">Role</span>
+      <svg class="scroll-arr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- ════ AREAS ════ -->
+<section id="areas" aria-label="Áreas de atuação">
+  <div class="wrap">
+    <div class="areas-hdr">
+      <div class="sec-label rev"><span>Especialidades</span></div>
+      <h2 class="rev d1">Áreas de atuação</h2>
+      <p class="rev d2">Expertise profunda em quatro pilares jurídicos para proteger o que você construiu, com clareza, ética e compromisso com resultados.</p>
+    </div>
+    <div class="areas-grid">
+      <!-- Tabs -->
+      <div class="areas-tabs" role="tablist" aria-label="Selecionar área">
+        <button class="atab active rev d1" role="tab" aria-selected="true" aria-controls="p-imob" data-panel="p-imob">
+          <div class="atab-icon">
+            <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <div class="atab-text">
+            <div class="atab-num">01</div>
+            <div class="atab-title">Direito Imobiliário</div>
+          </div>
+          <div class="atab-arr"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+        </button>
+        <button class="atab rev d2" role="tab" aria-selected="false" aria-controls="p-emp" data-panel="p-emp">
+          <div class="atab-icon">
+            <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+          </div>
+          <div class="atab-text">
+            <div class="atab-num">02</div>
+            <div class="atab-title">Direito Empresarial</div>
+          </div>
+          <div class="atab-arr"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+        </button>
+        <button class="atab rev d3" role="tab" aria-selected="false" aria-controls="p-saude" data-panel="p-saude">
+          <div class="atab-icon">
+            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+          </div>
+          <div class="atab-text">
+            <div class="atab-num">03</div>
+            <div class="atab-title">Direito Médico e da Saúde</div>
+          </div>
+          <div class="atab-arr"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+        </button>
+        <button class="atab rev d4" role="tab" aria-selected="false" aria-controls="p-familia" data-panel="p-familia">
+          <div class="atab-icon">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <div class="atab-text">
+            <div class="atab-num">04</div>
+            <div class="atab-title">Família e Sucessões</div>
+          </div>
+          <div class="atab-arr"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+        </button>
+        <button class="atab rev d5" role="tab" aria-selected="false" aria-controls="p-consultoria" data-panel="p-consultoria">
+          <div class="atab-icon">
+            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          </div>
+          <div class="atab-text">
+            <div class="atab-num">05</div>
+            <div class="atab-title">Consultoria</div>
+          </div>
+          <div class="atab-arr"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+        </button>
+        <button class="atab rev d5" role="tab" aria-selected="false" aria-controls="p-contratos" data-panel="p-contratos">
+          <div class="atab-icon">
+            <svg viewBox="0 0 24 24"><path d="M17 3a2.828 2.828 0 114 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></svg>
+          </div>
+          <div class="atab-text">
+            <div class="atab-num">06</div>
+            <div class="atab-title">Contratos</div>
+          </div>
+          <div class="atab-arr"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+        </button>
+      </div>
+      <!-- Panels -->
+      <div class="areas-panel-wrap rev d2">
+        <div id="p-imob" class="apanel active" role="tabpanel">
+          <div class="apanel-num">01</div>
+          <h3>Direito Imobiliário</h3>
+          <p class="apanel-desc">Imóveis envolvem decisões de alta relevância financeira e emocional. Orientação jurídica especializada pode evitar prejuízos significativos, seja na compra, venda, regularização ou em disputas possessórias.</p>
+          <div class="apanel-div"></div>
+          <ul>
+            <li><span>Ações possessórias (reintegração, manutenção, interdito proibitório)</span></li>
+            <li><span>Ações petitórias (usucapião, reivindicatória, imissão na posse)</span></li>
+            <li><span>Ações de despejo e cobrança de aluguéis</span></li>
+            <li><span>Rescisão contratual e devolução de valores</span></li>
+            <li><span>Indenização por vícios construtivos</span></li>
+            <li><span>Regularização de matrícula e registro de imóveis</span></li>
+            <li><span>Disputas condominiais e cobrança de cotas</span></li>
+          </ul>
+          <div class="apanel-foot">
+            <a href="https://wa.me/5512981210501?text=Ol%C3%A1%2C+Dra.+Mariana%21+Gostaria+de+consultar+sobre+Direito+Imobili%C3%A1rio." target="_blank" rel="noopener noreferrer" class="apanel-cta">
+              Consultar sobre Direito Imobiliário
+              <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </div>
+        </div>
+        <div id="p-emp" class="apanel" role="tabpanel">
+          <div class="apanel-num">02</div>
+          <h3>Direito Empresarial</h3>
+          <p class="apanel-desc">Sua empresa merece suporte jurídico proativo, não apenas reativo. Oferecemos consultoria preventiva e contenciosa para negócios de todos os portes, com foco em proteção de ativos e crescimento sustentável.</p>
+          <div class="apanel-div"></div>
+          <ul>
+            <li><span>Consultoria jurídica preventiva e contenciosa</span></li>
+            <li><span>Planejamento societário e contratual</span></li>
+            <li><span>Gestão tributária e fiscal</span></li>
+            <li><span>Assessoria trabalhista e previdenciária</span></li>
+            <li><span>Consultoria administrativa e regulatória</span></li>
+            <li><span>Gestão patrimonial e sucessória empresarial</span></li>
+            <li><span>Fusões, aquisições e licitações públicas</span></li>
+          </ul>
+          <div class="apanel-foot">
+            <a href="https://wa.me/5512981210501?text=Ol%C3%A1%2C+Dra.+Mariana%21+Gostaria+de+consultar+sobre+Direito+Empresarial." target="_blank" rel="noopener noreferrer" class="apanel-cta">
+              Consultar sobre Direito Empresarial
+              <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </div>
+        </div>
+        <div id="p-saude" class="apanel" role="tabpanel">
+          <div class="apanel-num">03</div>
+          <h3>Direito Médico e da Saúde</h3>
+          <p class="apanel-desc">O direito médico exige conhecimento técnico e setorial profundo. Atuamos na defesa de profissionais de saúde, clínicas e consultórios, além de representar pacientes em casos de erro médico e conflitos com planos.</p>
+          <div class="apanel-div"></div>
+          <ul>
+            <li><span>Responsabilidade civil médica</span></li>
+            <li><span>Ações trabalhistas no setor da saúde</span></li>
+            <li><span>Revisão tributária para clínicas e consultórios</span></li>
+            <li><span>Conflitos com planos e seguros de saúde</span></li>
+            <li><span>Regularização e licenciamento de estabelecimentos</span></li>
+            <li><span>Pareceres e contratos para profissionais da saúde</span></li>
+          </ul>
+          <div class="apanel-foot">
+            <a href="https://wa.me/5512981210501?text=Ol%C3%A1%2C+Dra.+Mariana%21+Gostaria+de+consultar+sobre+Direito+M%C3%A9dico." target="_blank" rel="noopener noreferrer" class="apanel-cta">
+              Consultar sobre Direito da Saúde
+              <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </div>
+        </div>
+        <div id="p-familia" class="apanel" role="tabpanel">
+          <div class="apanel-num">04</div>
+          <h3>Direito de Família e Sucessões</h3>
+          <p class="apanel-desc">Questões familiares exigem sensibilidade, discrição e excelência técnica. Conduzimos cada caso buscando a solução menos traumática possível, sem abrir mão dos seus direitos.</p>
+          <div class="apanel-div"></div>
+          <ul>
+            <li><span>Divórcios judiciais e extrajudiciais</span></li>
+            <li><span>Regulação de guarda e regime de convivência</span></li>
+            <li><span>Pensão alimentícia (fixação, revisão, exoneração)</span></li>
+            <li><span>Partilha de bens e dissolução de união estável</span></li>
+            <li><span>Reconhecimento e investigação de paternidade</span></li>
+            <li><span>Medidas protetivas e violência doméstica</span></li>
+            <li><span>Inventário e planejamento sucessório</span></li>
+          </ul>
+          <div class="apanel-foot">
+            <a href="https://wa.me/5512981210501?text=Ol%C3%A1%2C+Dra.+Mariana%21+Gostaria+de+consultar+sobre+Direito+de+Fam%C3%ADlia." target="_blank" rel="noopener noreferrer" class="apanel-cta">
+              Consultar sobre Família e Sucessões
+              <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </div>
+        </div>
+        <div id="p-consultoria" class="apanel" role="tabpanel">
+          <div class="apanel-num">05</div>
+          <h3>Consultoria</h3>
+          <p class="apanel-desc">Oferecemos assessoria jurídica estratégica para empresas e profissionais que buscam tomar decisões seguras, estruturar processos internos e se posicionar com responsabilidade diante de riscos jurídicos e regulatórios.</p>
+          <div class="apanel-div"></div>
+          <ul>
+            <li><span>Pareceres jurídicos</span></li>
+            <li><span>Contencioso administrativo</span></li>
+            <li><span>Regulamentos internos</span></li>
+            <li><span>Estratégias ESG</span></li>
+          </ul>
+          <div class="apanel-foot">
+            <a href="https://wa.me/5512981210501?text=Ol%C3%A1%2C+Dra.+Mariana%21+Gostaria+de+consultar+sobre+Consultoria+Jur%C3%ADdica." target="_blank" rel="noopener noreferrer" class="apanel-cta">
+              Consultar sobre Consultoria
+              <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </div>
+        </div>
+        <div id="p-contratos" class="apanel" role="tabpanel">
+          <div class="apanel-num">06</div>
+          <h3>Contratos</h3>
+          <p class="apanel-desc">Contratos bem estruturados são a base de qualquer relação comercial segura. Atuamos na criação, revisão e análise estratégica de instrumentos contratuais para proteger os interesses da sua empresa em cada negociação.</p>
+          <div class="apanel-div"></div>
+          <ul>
+            <li><span>Criação e revisão de contratos comerciais</span></li>
+            <li><span>Documentos societários</span></li>
+            <li><span>Códigos de ética</span></li>
+            <li><span>Análise estratégica de riscos</span></li>
+          </ul>
+          <div class="apanel-foot">
+            <a href="https://wa.me/5512981210501?text=Ol%C3%A1%2C+Dra.+Mariana%21+Gostaria+de+consultar+sobre+Contratos." target="_blank" rel="noopener noreferrer" class="apanel-cta">
+              Consultar sobre Contratos
+              <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ ABOUT ════ -->
+<section id="sobre" aria-label="Sobre a advogada">
+  <div class="sobre-bg" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="sobre-grid">
+      <!-- Photo -->
+      <div class="sobre-photo rev-l">
+        <div class="sobre-photo-border" aria-hidden="true"></div>
+        <div class="sobre-photo-inner">
+          <img src="team-1.jpg" alt="Dra. Mariana Lopes, advogada e sócia fundadora" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#1A1A1A 0%,#2a2a2a 100%)'"/>
+          <div class="sobre-photo-vig"></div>
+          <!-- overlay mobile: label + nome sobre a foto -->
+          <div class="sobre-photo-overlay" aria-hidden="true">
+            <div class="sec-label"><span>A Advogada</span></div>
+            <h2 class="sobre-name">Dra. Mariana Lopes</h2>
+          </div>
+        </div>
+        <div class="sobre-badge rev d3">
+          <div class="sobre-badge-n">20+</div>
+          <div class="sobre-badge-l">Anos de experiência</div>
+        </div>
+      </div>
+      <!-- Content -->
+      <div class="sobre-content rev-r">
+        <div class="sobre-hdr">
+          <div class="sec-label"><span>A Advogada</span></div>
+          <h2 class="sobre-name">Dra. Mariana Lopes</h2>
+          <div class="gold-bar"></div>
+        </div>
+        <div class="sobre-bio">
+          <p>Dra. Mariana Lopes é a <strong>fundadora do escritório Advocacia Mariana Lopes</strong>, contando com uma equipe altamente qualificada com mais de <strong>20 anos de experiência</strong> na advocacia contenciosa e consultiva, atuando com excelência nas áreas Cível, Empresarial e de Família.</p>
+          <p>Especialista em Processo Civil, Contratos e Direito Médico, acumulou experiência única na advocacia pública, com atuação em licitações, contratos públicos e direito administrativo. Uma combinação rara e estratégica para empresas que operam no setor governamental.</p>
+          <p>Reconhecida no Vale do Paraíba pela capacidade de traduzir complexidade jurídica em clareza: você sempre saberá exatamente o que está acontecendo com seu caso e por quê.</p>
+        </div>
+        <div class="sobre-quote">
+          <p>"Cada caso carrega a história de uma pessoa ou empresa. Trato cada um com a seriedade e o cuidado que merece."</p>
+        </div>
+        <div class="sobre-creds">
+          <div class="cred">
+            <div class="cred-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg></div>
+            <div class="cred-lbl">20+ anos</div>
+            <div class="cred-sub">de advocacia privada e pública</div>
+          </div>
+          <div class="cred">
+            <div class="cred-ico"><svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg></div>
+            <div class="cred-lbl">Especialista</div>
+            <div class="cred-sub">em Processo Civil e Contratos</div>
+          </div>
+          <div class="cred">
+            <div class="cred-ico"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <div class="cred-lbl">Experiência</div>
+            <div class="cred-sub">em licitações e direito público</div>
+          </div>
+        </div>
+        <div>
+          <a href="https://wa.me/5512981210501?text=Ol%C3%A1%2C+Dra.+Mariana%21+Gostaria+de+agendar+uma+consulta." target="_blank" rel="noopener noreferrer" class="btn-gold">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+            Fale com a Dra. Mariana
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ STATS ════ -->
+<section id="stats" aria-label="Números do escritório">
+  <div class="wrap">
+    <div class="stats-grid">
+      <div class="stat rev">
+        <div class="stat-val"><span class="counter" data-target="20" data-suffix="+">0+</span></div>
+        <div class="stat-bar" aria-hidden="true"></div>
+        <div class="stat-lbl">Anos de Experiência</div>
+        <div class="stat-sub">em advocacia privada e pública</div>
+      </div>
+      <div class="stat rev d1">
+        <div class="stat-val"><span class="counter" data-target="4">0</span></div>
+        <div class="stat-bar" aria-hidden="true"></div>
+        <div class="stat-lbl">Áreas de Atuação</div>
+        <div class="stat-sub">com conhecimento técnico aprofundado</div>
+      </div>
+      <div class="stat rev d2">
+        <div class="stat-val"><span class="counter" data-target="100" data-suffix="%">0%</span></div>
+        <div class="stat-bar" aria-hidden="true"></div>
+        <div class="stat-lbl">Dedicação</div>
+        <div class="stat-sub">em cada caso, sem exceções</div>
+      </div>
+      <div class="stat rev d3">
+        <div class="stat-val" style="font-size:clamp(1.6rem,2.5vw,2.6rem)">Vale do Paraíba</div>
+        <div class="stat-bar" aria-hidden="true"></div>
+        <div class="stat-lbl">Referência Regional</div>
+        <div class="stat-sub">em São José dos Campos, SP</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ PROCESS ════ -->
+<section id="processo" aria-label="Como trabalhamos">
+  <div class="proc-bg" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="proc-hdr">
+      <div class="proc-hdr-l">
+        <div class="sec-label rev"><span>Nossa Abordagem</span></div>
+        <h2 class="rev d1">Como trabalhamos</h2>
+      </div>
+      <p class="proc-hdr-r rev d2">Um processo transparente, pensado para que você entenda cada passo da sua jornada jurídica.</p>
+    </div>
+    <div class="proc-steps">
+      <div class="step rev">
+        <div class="step-ico-wrap">
+          <div class="step-ico">
+            <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          </div>
+          <div class="step-badge">1</div>
+        </div>
+        <div class="step-txt">
+          <div class="step-num">01</div>
+          <div class="step-title">Consulta Inicial</div>
+          <div class="step-desc">Apresente seu caso com liberdade. Ouvimos cada detalhe com atenção e sem pressa, sem jargões, sem julgamentos.</div>
+        </div>
+      </div>
+      <div class="step rev d1">
+        <div class="step-ico-wrap">
+          <div class="step-ico">
+            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </div>
+          <div class="step-badge">2</div>
+        </div>
+        <div class="step-txt">
+          <div class="step-num">02</div>
+          <div class="step-title">Análise Estratégica</div>
+          <div class="step-desc">Mapeamos todos os riscos, oportunidades jurídicas e o melhor caminho para a sua situação específica.</div>
+        </div>
+      </div>
+      <div class="step rev d2">
+        <div class="step-ico-wrap">
+          <div class="step-ico">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="step-badge">3</div>
+        </div>
+        <div class="step-txt">
+          <div class="step-num">03</div>
+          <div class="step-title">Atuação Técnica</div>
+          <div class="step-desc">Representamos você com excelência e rigor, mantendo comunicação clara e transparente em cada etapa do processo.</div>
+        </div>
+      </div>
+      <div class="step rev d3">
+        <div class="step-ico-wrap">
+          <div class="step-ico">
+            <svg viewBox="0 0 24 24"><polyline points="22 11.08 22 12 12 22"/><polyline points="22 2 12 12 9 9"/><line x1="2" y1="22" x2="9" y2="15"/></svg>
+          </div>
+          <div class="step-badge">4</div>
+        </div>
+        <div class="step-txt">
+          <div class="step-num">04</div>
+          <div class="step-title">Resultado Efetivo</div>
+          <div class="step-desc">Buscamos a solução mais criativa e eficaz, sempre guiada pela ética e pelo seu melhor interesse.</div>
+        </div>
+      </div>
+    </div>
+    <div class="proc-bot rev d2">
+      <p>Pronto para dar o primeiro passo? A consulta inicial é o momento de entender seu caso sem compromisso.</p>
+      <a href="https://wa.me/5512981210501?text=Ol%C3%A1%2C+Dra.+Mariana%21+Gostaria+de+iniciar+uma+consulta." target="_blank" rel="noopener noreferrer" class="btn-gold">Iniciar Consulta</a>
+    </div>
+  </div>
+</section>
+
+<!-- ════ FAQ ════ -->
+<section id="faq" aria-label="Perguntas frequentes">
+  <div class="wrap">
+    <div class="faq-grid">
+      <div class="faq-side rev">
+        <div class="sec-label"><span>Dúvidas</span></div>
+        <h2>Perguntas<br>frequentes</h2>
+        <p>Não encontrou o que procurava? Mande uma mensagem e respondemos com rapidez e clareza.</p>
+        <a href="https://wa.me/5512981210501?text=Ol%C3%A1%2C+Dra.+Mariana%21+Tenho+uma+d%C3%BAvida." target="_blank" rel="noopener noreferrer" class="btn-dark">Fazer uma pergunta</a>
+      </div>
+      <div class="faq-list rev d1">
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">
+            <span class="faq-q">Quais áreas do direito são atendidas?</span>
+            <div class="faq-ico"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+          </button>
+          <div class="faq-ans"><div class="faq-ans-in"><p>Atuamos em Direito Imobiliário, Direito Empresarial, Direito Médico e da Saúde, e Direito de Família e Sucessões. Cada área conta com conhecimento técnico aprofundado, experiência prática consolidada e visão estratégica, não apenas execução processual.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">
+            <span class="faq-q">Como funciona a primeira consulta?</span>
+            <div class="faq-ico"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+          </button>
+          <div class="faq-ans"><div class="faq-ans-in"><p>Na consulta inicial ouvimos detalhadamente sua situação, esclarecemos dúvidas e apresentamos as possíveis estratégias jurídicas. Pode ser agendada por telefone, WhatsApp ou e-mail. É o momento para você entender o caminho e decidir com segurança e clareza.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">
+            <span class="faq-q">Qual é o diferencial do escritório?</span>
+            <div class="faq-ico"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+          </button>
+          <div class="faq-ans"><div class="faq-ans-in"><p>Combinamos excelência técnica com abordagem verdadeiramente humana e comunicação clara. Cada cliente sabe exatamente o que está acontecendo com seu caso. Nossa experiência na advocacia pública nos confere visão estratégica diferenciada, especialmente para empresas que interagem com o setor público.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">
+            <span class="faq-q">Atendem pessoas físicas e empresas?</span>
+            <div class="faq-ico"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+          </button>
+          <div class="faq-ans"><div class="faq-ans-in"><p>Sim. Atendemos tanto pessoas físicas quanto jurídicas de todos os portes. Para empresas, oferecemos consultoria preventiva, análise de contratos e representação em litígios. Para pessoas físicas, atuamos principalmente em questões imobiliárias, familiares e de saúde.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">
+            <span class="faq-q">Como são definidos os honorários?</span>
+            <div class="faq-ico"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+          </button>
+          <div class="faq-ans"><div class="faq-ans-in"><p>Os honorários são definidos após análise da complexidade do caso, modalidade de atuação e tempo estimado. Tudo é apresentado com total clareza e transparência na consulta inicial, sem surpresas nem cobranças ocultas.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">
+            <span class="faq-q">Qual o prazo médio de resolução dos casos?</span>
+            <div class="faq-ico"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+          </button>
+          <div class="faq-ans"><div class="faq-ans-in"><p>Os prazos variam conforme a natureza do processo. Acordos extrajudiciais podem ser resolvidos em semanas; processos judiciais complexos podem levar meses ou anos. Somos completamente transparentes quanto às expectativas reais desde o início.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">
+            <span class="faq-q">Como meus dados pessoais são protegidos?</span>
+            <div class="faq-ico"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+          </button>
+          <div class="faq-ans"><div class="faq-ans-in"><p>Todos os dados compartilhados são tratados com total sigilo e confidencialidade, em conformidade com a LGPD. As informações são utilizadas exclusivamente para a prestação dos serviços jurídicos contratados.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ FINAL CTA ════ -->
+<section id="cta" aria-label="Contato e agendamento">
+  <div class="cta-glow" aria-hidden="true"></div>
+  <div class="cta-ghost" aria-hidden="true"><span>LEI</span></div>
+  <div class="wrap">
+    <div class="cta-cnt">
+      <div class="cta-lbl rev"><span>Vamos conversar</span></div>
+      <h2 class="cta-h rev d1">Seu problema jurídico<br><span>tem solução.</span></h2>
+      <p class="cta-sub rev d2">Não deixe a incerteza paralisar você. Agende uma consulta e descubra exatamente o que pode ser feito pelo seu caso, com clareza e sem compromisso.</p>
+      <div class="cta-btns rev d3">
+        <a href="https://wa.me/5512981210501?text=Ol%C3%A1%2C+Dra.+Mariana%21+Gostaria+de+agendar+uma+consulta." target="_blank" rel="noopener noreferrer" class="btn-gold" style="font-size:16px;padding:17px 36px">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          Agendar pelo WhatsApp
+        </a>
+        <a href="tel:+551232099039" class="btn-outline" style="font-size:15px">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.7A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.91a16 16 0 006 6l1.27-.51a2 2 0 012.11.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          (12) 3209-9039
+        </a>
+      </div>
+      <div class="cta-details rev d4">
+        <a href="mailto:contato@marianadvocacia.com.br" class="cta-det">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          contato@marianadvocacia.com.br
+        </a>
+        <div class="cta-dot" aria-hidden="true"></div>
+        <div class="cta-det">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          R. Jurema Vieira Medrado, 65, sala 405, SJC/SP
+        </div>
+        <div class="cta-dot" aria-hidden="true"></div>
+        <div class="cta-det">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Seg–Sex · 09h às 18h
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ LOCALIZAÇÃO ════ -->
+<section id="localizacao" aria-label="Localização do escritório">
+  <div class="loc-inner">
+    <!-- Info -->
+    <div class="loc-info">
+      <div class="sec-label rev"><span>Onde estamos</span></div>
+      <h2 class="rev d1">Venha nos visitar</h2>
+      <p class="rev d2">Atendemos pessoalmente em nosso escritório em São José dos Campos. Agende antes para garantir seu horário.</p>
+      <div class="loc-details rev d2">
+        <div class="loc-row">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>R. Jurema Vieira Medrado, 65, sala 405<br>Parque Residencial Aquarius<br><strong>São José dos Campos, SP</strong></span>
+        </div>
+        <div class="loc-row">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span>Segunda a Sexta · 09h às 18h</span>
+        </div>
+        <div class="loc-row">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.7A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.91a16 16 0 006 6l1.27-.51a2 2 0 012.11.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          <a href="tel:+551232099039">(12) 3209-9039</a>
+        </div>
+        <div class="loc-row">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.7A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.91a16 16 0 006 6l1.27-.51a2 2 0 012.11.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          <a href="https://wa.me/5512981210501?text=Ol%C3%A1%2C+Dra.+Mariana%21+Gostaria+de+agendar+uma+visita." target="_blank" rel="noopener noreferrer">(12) 98121-0501 · WhatsApp</a>
+        </div>
+      </div>
+    </div>
+    <!-- Map -->
+    <div class="loc-map">
+      <iframe
+        src="https://maps.google.com/maps?q=Rua+Jurema+Vieira+Medrado,+65,+S%C3%A3o+Jos%C3%A9+dos+Campos,+SP,+Brasil&output=embed&z=16&hl=pt-BR"
+        title="Localização do escritório Mariana Lopes Advocacia"
+        loading="lazy"
+        allowfullscreen
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+      <div class="loc-map-overlay" aria-hidden="true"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ FOOTER ════ -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-brand-n">Mariana Lopes</div>
+        <div class="footer-brand-s">Advocacia</div>
+        <p class="footer-brand-d">Soluções jurídicas estratégicas e personalizadas para empresas e famílias no Vale do Paraíba.</p>
+        <div class="footer-soc">
+          <a href="https://www.instagram.com/marianalopes.adv" target="_blank" rel="noopener noreferrer" class="fsoc" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/mariana-lopes-668a90135" target="_blank" rel="noopener noreferrer" class="fsoc" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-ttl">Navegação</div>
+        <ul class="footer-nav-list">
+          <li><a href="index.html#areas">Áreas de Atuação</a></li>
+          <li><a href="index.html#sobre">Sobre a Advogada</a></li>
+          <li><a href="index.html#processo">Como Trabalhamos</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-ttl">Contato</div>
+        <div class="footer-contacts">
+          <a href="tel:+551232099039" class="fcon">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.7A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.91a16 16 0 006 6l1.27-.51a2 2 0 012.11.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            (12) 3209-9039
+          </a>
+          <a href="https://wa.me/5512981210501?text=Ol%C3%A1%2C+Dra.+Mariana%21+Gostaria+de+agendar+uma+consulta." target="_blank" rel="noopener noreferrer" class="fcon">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.7A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.91a16 16 0 006 6l1.27-.51a2 2 0 012.11.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            (12) 98121-0501 · WhatsApp
+          </a>
+          <a href="mailto:contato@marianadvocacia.com.br" class="fcon">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            contato@marianadvocacia.com.br
+          </a>
+          <div class="fcon">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            R. Jurema Vieira Medrado, 65, sala 405, Parque Residencial Aquarius, São José dos Campos, SP
+          </div>
+          <div class="fcon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Segunda a Sexta · 09h às 18h
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bot">
+      <p>© <span id="yr"></span> Mariana Lopes Advocacia · Todos os direitos reservados.</p>
+      <p>OAB/SP · São José dos Campos, SP</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ════ WHATSAPP FLOAT ════ -->
+<div id="waf" aria-live="polite">
+  <div class="waf-tip" id="waf-tip" role="status">
+    <button class="waf-tip-x" id="waf-close" aria-label="Fechar">
+      <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div class="waf-tip-t">Fale com a Dra. Mariana</div>
+    <div class="waf-tip-s">Tire suas dúvidas pelo WhatsApp agora mesmo.</div>
+    <div class="waf-tip-arr" aria-hidden="true"></div>
+  </div>
+  <a href="https://wa.me/5512981210501?text=Ol%C3%A1%2C+Dra.+Mariana%21+Gostaria+de+agendar+uma+consulta." target="_blank" rel="noopener noreferrer" class="waf-btn" aria-label="Conversar pelo WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+</div>
+
+<script>
+// ── Year ──
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+// ── Navbar scroll ──
+var nav = document.getElementById('nav');
+window.addEventListener('scroll', function(){
+  nav.classList.toggle('stuck', window.scrollY > 60);
+}, {passive:true});
+
+// ── Mobile menu ──
+var hamBtn = document.getElementById('ham-btn');
+var mobMenu = document.getElementById('mob-menu');
+var hamIco = document.getElementById('ham-ico');
+var closeIco = document.getElementById('close-ico');
+var menuOpen = false;
+hamBtn.addEventListener('click', function(){
+  menuOpen = !menuOpen;
+  mobMenu.classList.toggle('open', menuOpen);
+  hamIco.style.display = menuOpen ? 'none' : 'block';
+  closeIco.style.display = menuOpen ? 'block' : 'none';
+  hamBtn.setAttribute('aria-expanded', menuOpen);
+  document.body.style.overflow = menuOpen ? 'hidden' : '';
+});
+mobMenu.querySelectorAll('a').forEach(function(a){
+  a.addEventListener('click', function(){
+    menuOpen = false;
+    mobMenu.classList.remove('open');
+    hamIco.style.display = 'block';
+    closeIco.style.display = 'none';
+    hamBtn.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  });
+});
+
+// ── Areas tabs ──
+document.querySelectorAll('.atab').forEach(function(tab){
+  tab.addEventListener('click', function(){
+    var panelId = tab.dataset.panel;
+    document.querySelectorAll('.atab').forEach(function(t){ t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
+    document.querySelectorAll('.apanel').forEach(function(p){ p.classList.remove('active'); });
+    tab.classList.add('active');
+    tab.setAttribute('aria-selected','true');
+    document.getElementById(panelId).classList.add('active');
+  });
+});
+
+// ── FAQ accordion ──
+document.querySelectorAll('.faq-btn').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var item = btn.closest('.faq-item');
+    var isOpen = item.classList.contains('open');
+    // Close all
+    document.querySelectorAll('.faq-item').forEach(function(i){
+      i.classList.remove('open');
+      i.querySelector('.faq-btn').setAttribute('aria-expanded','false');
+      // swap icon
+      var ico = i.querySelector('.faq-ico svg');
+      ico.innerHTML = '<line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>';
+    });
+    if(!isOpen){
+      item.classList.add('open');
+      btn.setAttribute('aria-expanded','true');
+      var ico = btn.querySelector('.faq-ico svg');
+      ico.innerHTML = '<line x1="5" y1="12" x2="19" y2="12"/>';
+    }
+  });
+});
+
+// ── Scroll reveal ──
+var revEls = document.querySelectorAll('.rev,.rev-l,.rev-r');
+var revObs = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(e.isIntersecting){ e.target.classList.add('in'); revObs.unobserve(e.target); }
+  });
+},{threshold:0.12,rootMargin:'-40px'});
+revEls.forEach(function(el){ revObs.observe(el); });
+
+// ── Counter animation ──
+function animCounter(el){
+  var target = parseInt(el.dataset.target,10);
+  var suffix = el.dataset.suffix||'';
+  var duration = 1800;
+  var start = Date.now();
+  function tick(){
+    var elapsed = Date.now()-start;
+    var p = Math.min(elapsed/duration,1);
+    var eased = 1-Math.pow(1-p,3);
+    el.textContent = Math.round(eased*target)+suffix;
+    if(p<1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+var cntObs = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(e.isIntersecting){ animCounter(e.target); cntObs.unobserve(e.target); }
+  });
+},{threshold:0.5});
+document.querySelectorAll('.counter').forEach(function(el){ cntObs.observe(el); });
+
+// ── WhatsApp float ──
+var waf = document.getElementById('waf');
+var wafTip = document.getElementById('waf-tip');
+var wafClose = document.getElementById('waf-close');
+var tipShown = false;
+window.addEventListener('scroll', function(){
+  var show = window.scrollY > 300;
+  waf.classList.toggle('show', show);
+  if(show && !tipShown){
+    setTimeout(function(){ wafTip.classList.add('show'); tipShown = true; },2500);
+  }
+},{passive:true});
+wafClose.addEventListener('click', function(e){
+  e.preventDefault(); e.stopPropagation();
+  wafTip.classList.remove('show');
+});
+</script>
+</body>
+</html>
