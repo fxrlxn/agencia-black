@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sorriso Ateliê — Odontologia Premium · São Paulo</title>
+<meta name="description" content="Clínica odontológica premium em São Paulo. Tecnologia digital, conforto e uma equipe dedicada a cuidar do seu sorriso do início ao fim.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230E6B5C'/%3E%3Cpath d='M50 25c-13 0-22 10-22 24 0 10 4 18 9 23 1 6 3 13 6 13 3 0 4-8 5-13 1-1 3-1 4 0 1 5 2 13 5 13 3 0 5-7 6-13 5-5 9-13 9-23 0-14-9-24-22-24z' fill='%23FFFFFF'/%3E%3Ccircle cx='42' cy='36' r='3' fill='%234FD1B5'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dentist",
+  "name": "Sorriso Ateliê Odontologia",
+  "alternateName": "Sorriso Ateliê",
+  "description": "Clínica odontológica premium em São Paulo, com tecnologia digital, planejamento 3D e atendimento humanizado.",
+  "url": "https://www.sorrisoatelie.com.br",
+  "telephone": "+55-11-4000-1234",
+  "priceRange": "$$$",
+  "image": "https://www.sorrisoatelie.com.br/og-image.jpg",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Rua Harmonia, 245, conj. 61",
+    "addressLocality": "São Paulo",
+    "addressRegion": "SP",
+    "postalCode": "05435-000",
+    "addressCountry": "BR"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": -23.5570, "longitude": -46.6890 },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "19:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "13:00" }
+  ],
+  "medicalSpecialty": "Dentistry",
+  "sameAs": ["https://www.instagram.com/sorrisoatelie", "https://wa.me/5511940001234"]
+}
+</script>
+
+<style>
+  :root{
+    --white:#FFFFFF;
+    --bg:#F3FAF8;
+    --ink:#0A2E29;
+    --ink-soft:#3C5854;
+    --muted:#6C8480;
+    --teal:#0E6B5C;
+    --teal-dark:#0A4A40;
+    --teal-deep:#072E28;
+    --mint:#3ECFB0;
+    --mint-light:#D6F3EA;
+    --border:#DCEAE6;
+    --coral:#E8664F;
+    --shadow-sm: 0 2px 10px rgba(10,46,41,0.06);
+    --shadow-md: 0 12px 32px rgba(10,46,41,0.10);
+    --shadow-lg: 0 24px 60px rgba(10,46,41,0.16);
+    --radius-lg: 28px;
+    --radius-md: 18px;
+    --radius-sm: 12px;
+    --display:'Bricolage Grotesque', -apple-system, sans-serif;
+    --sans:'Plus Jakarta Sans', -apple-system, sans-serif;
+    --container:1280px;
+    --gutter:clamp(20px, 5vw, 64px);
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth; scroll-padding-top:96px;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important;}
+  }
+
+  body{
+    background:var(--white);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%; display:block;}
+  a{color:inherit;}
+  ul{list-style:none;}
+  button{font-family:inherit; cursor:pointer;}
+  :focus-visible{outline:3px solid var(--teal); outline-offset:3px;}
+
+  .wrap{max-width:var(--container); margin:0 auto; padding-left:var(--gutter); padding-right:var(--gutter);}
+
+  .skip-link{position:absolute; left:-9999px; top:0; background:var(--teal-deep); color:#fff; padding:14px 22px; z-index:3000; font-size:14px; border-radius:0 0 10px 0;}
+  .skip-link:focus{left:0; top:0;}
+
+  h1,h2,h3{font-family:var(--display); color:var(--ink); font-weight:700; letter-spacing:-0.02em;}
+
+  .chip{
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--mint-light); color:var(--teal-dark);
+    font-size:12.5px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase;
+    padding:9px 18px; border-radius:999px;
+  }
+  .chip.on-photo{background:rgba(255,255,255,0.16); color:#fff; backdrop-filter:blur(8px); text-transform:none; letter-spacing:normal; font-weight:600; padding:8px 16px 8px 8px;}
+  .chip.on-photo .dot{width:26px; height:26px; border-radius:50%; background:var(--white); display:flex; align-items:center; justify-content:center;}
+  .chip svg{width:14px; height:14px;}
+
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:var(--sans); font-weight:700; font-size:15px;
+    padding:15px 28px; border-radius:999px; border:none;
+    background:var(--teal); color:#fff; text-decoration:none;
+    transition:transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+    box-shadow:var(--shadow-sm);
+    white-space:nowrap;
+  }
+  .btn:hover{background:var(--teal-dark); transform:translateY(-2px); box-shadow:var(--shadow-md);}
+  .btn:active{transform:scale(0.96); transition-duration:100ms;}
+  .btn.outline{background:transparent; color:var(--ink); border:1.5px solid var(--border);}
+  .btn.outline:hover{background:var(--bg); border-color:var(--teal);}
+  .btn.on-dark{background:#fff; color:var(--teal-dark);}
+  .btn.on-dark:hover{background:var(--mint-light);}
+  .btn svg{width:18px; height:18px; transition:transform 250ms cubic-bezier(.16,1,.3,1);}
+  .btn:hover svg{transform:translateX(3px);}
+
+  /* header */
+  header.site{
+    position:fixed; top:0; left:0; right:0; z-index:1000;
+    background:transparent; border-bottom:1px solid transparent;
+    transition:background 420ms cubic-bezier(.16,1,.3,1), border-color 420ms cubic-bezier(.16,1,.3,1), box-shadow 420ms cubic-bezier(.16,1,.3,1);
+  }
+  header.site.scrolled{
+    background:rgba(255,255,255,0.9); backdrop-filter:blur(10px); border-bottom-color:var(--border);
+    box-shadow:0 8px 24px rgba(10,46,41,0.05);
+  }
+  .nav-row{display:flex; align-items:center; justify-content:space-between; padding:16px var(--gutter); max-width:var(--container); margin:0 auto;}
+  .brand{display:flex; align-items:center; gap:11px; text-decoration:none;}
+  .brand-mark{width:38px; height:38px; border-radius:11px; background:var(--teal); display:flex; align-items:center; justify-content:center; flex-shrink:0; transition:transform 300ms cubic-bezier(.16,1,.3,1);}
+  .brand:hover .brand-mark{transform:rotate(-8deg) scale(1.06);}
+  .brand-mark svg{width:20px; height:20px;}
+  .brand-name{font-family:var(--display); font-weight:700; font-size:19px; color:#fff; line-height:1; transition:color 350ms ease;}
+  .brand-name small{display:block; font-family:var(--sans); font-weight:600; font-size:10.5px; letter-spacing:0.08em; color:rgba(255,255,255,0.7); margin-top:3px; text-transform:uppercase; transition:color 350ms ease;}
+  header.site.scrolled .brand-name{color:var(--ink);}
+  header.site.scrolled .brand-name small{color:var(--muted);}
+
+  nav.primary{display:flex; align-items:center; gap:32px;}
+  nav.primary a{position:relative; padding-bottom:3px; font-size:14.5px; font-weight:600; text-decoration:none; color:rgba(255,255,255,0.92); transition:color 300ms ease;}
+  nav.primary a::after{content:""; position:absolute; left:0; bottom:0; width:100%; height:2px; background:currentColor; transform:scaleX(0); transform-origin:left center; transition:transform 280ms cubic-bezier(.16,1,.3,1);}
+  nav.primary a:hover::after{transform:scaleX(1);}
+  header.site.scrolled nav.primary a{color:var(--ink-soft);}
+  header.site:not(.scrolled) nav.primary a:hover{color:#fff;}
+  header.site.scrolled nav.primary a:hover{color:var(--teal);}
+
+  .header-cta{display:flex; align-items:center; gap:20px;}
+  .tel-link{display:none; align-items:center; gap:8px; font-size:14px; font-weight:600; text-decoration:none; color:rgba(255,255,255,0.9); transition:color 300ms ease;}
+  .tel-link svg{width:16px; height:16px; stroke:#fff; transition:stroke 300ms ease;}
+  header.site.scrolled .tel-link{color:var(--ink-soft);}
+  header.site.scrolled .tel-link svg{stroke:var(--teal);}
+
+  .menu-toggle{
+    display:none; background:rgba(255,255,255,0.14); border:1px solid rgba(255,255,255,0.3); color:#fff;
+    width:44px; height:44px; align-items:center; justify-content:center; border-radius:12px;
+    transition:background 300ms ease, border-color 300ms ease, color 300ms ease;
+  }
+  header.site.scrolled .menu-toggle{background:var(--bg); border-color:var(--border); color:var(--ink);}
+  .menu-toggle svg{width:20px; height:20px;}
+
+  /* hero */
+  .hero{position:relative; overflow:hidden; min-height:92vh; min-height:92svh; display:flex; flex-direction:column; justify-content:flex-end; color:#fff;}
+  .hero .hero-bg{position:absolute; inset:0; z-index:0; overflow:hidden;}
+  .hero .hero-bg img{
+    width:100%; height:100%; object-fit:cover; object-position:68% 42%;
+    transform-origin:68% 42%;
+    animation:heroKenBurns 26s cubic-bezier(.4,0,.2,1) infinite alternate;
+  }
+  @keyframes heroKenBurns{
+    from{ transform:scale(1.001); }
+    to{ transform:scale(1.1); }
+  }
+  .hero .hero-scrim{
+    position:absolute; inset:0;
+    background:
+      linear-gradient(100deg, rgba(4,26,23,0.88) 0%, rgba(4,26,23,0.62) 34%, rgba(4,26,23,0.12) 62%),
+      linear-gradient(0deg, rgba(3,20,18,0.92) 0%, rgba(3,20,18,0.55) 22%, rgba(3,20,18,0) 46%);
+  }
+  .hero .wrap{position:relative; z-index:1;}
+  .hero-copy{max-width:640px; padding-top:168px;}
+  .hero h1{font-size:clamp(2.5rem, 4.8vw, 3.9rem); line-height:1.04; margin:22px 0 20px; color:#fff;}
+  .hero h1 .accent{color:var(--mint);}
+  .hero .lede{font-size:18px; color:rgba(255,255,255,0.82); max-width:46ch; margin-bottom:34px;}
+  .hero-ctas{display:flex; align-items:center; gap:16px; flex-wrap:wrap;}
+  .hero .btn.outline{border-color:rgba(255,255,255,0.4); color:#fff;}
+  .hero .btn.outline:hover{background:rgba(255,255,255,0.12); border-color:#fff;}
+
+  /* rehearsed hero entrance: chip, headline, lede, ctas cascade in on load */
+  .hero-copy > *{opacity:0; transform:translateY(20px); animation:heroRise 900ms cubic-bezier(.16,1,.3,1) forwards;}
+  .hero-copy > *:nth-child(1){animation-delay:150ms;}
+  .hero-copy > h1{animation-name:heroRiseBlur; animation-delay:280ms;}
+  .hero-copy > *:nth-child(3){animation-delay:480ms;}
+  .hero-copy > *:nth-child(4){animation-delay:620ms;}
+  @keyframes heroRise{ to{opacity:1; transform:translateY(0);} }
+  @keyframes heroRiseBlur{ from{opacity:0; transform:translateY(20px); filter:blur(14px);} to{opacity:1; transform:translateY(0); filter:blur(0);} }
+
+  .hero-stats{
+    position:relative; z-index:1; margin-top:64px; padding:30px 0 40px;
+    border-top:1px solid rgba(255,255,255,0.18);
+    display:grid; grid-template-columns:repeat(4,1fr);
+  }
+  .hero-stats .stat-item{
+    border-left:1px solid rgba(255,255,255,0.18); padding-left:22px;
+    opacity:0; transform:translateY(14px); animation:heroRise 700ms cubic-bezier(.16,1,.3,1) forwards;
+  }
+  .hero-stats .stat-item:nth-child(1){animation-delay:780ms; border-left:none; padding-left:0;}
+  .hero-stats .stat-item:nth-child(2){animation-delay:840ms;}
+  .hero-stats .stat-item:nth-child(3){animation-delay:900ms;}
+  .hero-stats .stat-item:nth-child(4){animation-delay:960ms;}
+  .hero-stats .n{font-family:var(--display); font-size:clamp(1.6rem,2.6vw,2.1rem); font-weight:800; color:#fff; line-height:1.1;}
+  .hero-stats .l{font-size:13px; color:rgba(255,255,255,0.68); font-weight:600; margin-top:4px;}
+
+  /* section shell */
+  section{padding:104px 0;}
+  .section-head{max-width:640px; margin:0 auto 56px;}
+  .section-head.left{margin-left:0;}
+  .section-head h2{font-size:clamp(1.9rem, 3.2vw, 2.6rem); line-height:1.15; margin:16px 0 14px;}
+  .section-head p{font-size:17px; color:var(--ink-soft);}
+  .center{text-align:center; margin-left:auto; margin-right:auto;}
+
+  .band-soft{background:var(--bg);}
+
+  /* treatments bento */
+  .bento{display:grid; grid-template-columns:repeat(3, 1fr); grid-auto-rows:1fr; gap:22px;}
+  .t-card{
+    background:var(--white); border:1px solid var(--border); border-radius:var(--radius-md);
+    padding:30px; display:flex; flex-direction:column; gap:16px;
+    transition:transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+    position:relative;
+  }
+  .t-card:hover{transform:translateY(-4px); box-shadow:var(--shadow-md); border-color:transparent;}
+  .t-card .ic{display:flex; align-items:center;}
+  .t-card .ic svg{width:30px; height:30px;}
+  .t-card h3{font-size:19px; font-weight:700;}
+  .t-card p{font-size:14.5px; color:var(--muted); flex-grow:1;}
+  .t-card .go{display:inline-flex; align-items:center; gap:6px; font-size:13.5px; font-weight:700; color:var(--teal); text-decoration:none;}
+  .t-card .go svg{width:14px; height:14px; transition:transform 180ms ease;}
+  .t-card:hover .go svg{transform:translateX(3px);}
+
+  .t-card.with-photo{padding:0; overflow:hidden; gap:0;}
+  .t-card.with-photo .photo{aspect-ratio:16/10; position:relative; overflow:hidden;}
+  .t-card.with-photo .photo img{width:100%; height:100%; object-fit:cover;}
+  .t-card.with-photo .content{padding:24px; display:flex; flex-direction:column; gap:14px; flex-grow:1;}
+  .t-card.with-photo .ic{margin-top:-40px; position:relative; z-index:1;}
+  .t-card.with-photo .ic svg{width:28px; height:28px; fill:#fff !important; filter:drop-shadow(0 2px 5px rgba(0,0,0,0.45));}
+
+  /* unify the varied source photos into one consistent palette */
+  .t-card.with-photo .photo img{
+    filter:saturate(0.78) contrast(1.06) brightness(1.03) sepia(0.06);
+  }
+  .t-card.with-photo .photo::after{
+    content:""; position:absolute; inset:0;
+    background:linear-gradient(160deg, rgba(14,107,92,0.22) 0%, rgba(7,46,40,0.06) 45%, rgba(7,46,40,0.32) 100%);
+    mix-blend-mode:multiply;
+  }
+
+  /* diferenciais */
+  .diff-grid{display:grid; grid-template-columns:0.85fr 1.15fr; gap:64px; align-items:center;}
+  .diff-photo{border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-md); aspect-ratio:4/5; position:relative;}
+  .diff-photo img{width:100%; height:100%; object-fit:cover;}
+  .diff-list{display:flex; flex-direction:column; gap:6px;}
+  .diff-row{display:flex; align-items:flex-start; gap:18px; padding:20px 0; border-bottom:1px solid var(--border);}
+  .diff-row:last-child{border-bottom:none;}
+  .diff-row .ic{width:30px; display:flex; align-items:flex-start; justify-content:center; flex-shrink:0; padding-top:2px;}
+  .diff-row .ic svg{width:26px; height:26px;}
+  .diff-row h3{font-size:16.5px; font-weight:700; margin-bottom:4px;}
+  .diff-row p{font-size:14.5px; color:var(--muted);}
+
+  /* metodo */
+  .steps{display:grid; grid-template-columns:repeat(4,1fr); gap:28px; position:relative;}
+  .steps::before{
+    content:""; position:absolute; top:26px;
+    left:calc((100% - 84px) / 8); right:calc((100% - 84px) / 8);
+    height:2px; background:var(--border); z-index:0;
+  }
+  .step{position:relative; z-index:1; display:flex; flex-direction:column; align-items:center; text-align:center; gap:16px;}
+  .step .num{
+    width:52px; height:52px; border-radius:50%; background:var(--teal); color:#fff;
+    display:flex; align-items:center; justify-content:center; font-family:var(--display); font-weight:700; font-size:19px;
+    flex-shrink:0;
+  }
+  .step h3{font-size:17px; font-weight:700;}
+  .step p{font-size:14px; color:var(--muted); max-width:26ch;}
+
+  /* depoimentos */
+  .testi-layout{display:grid; grid-template-columns:0.9fr 1.1fr; gap:56px; align-items:center;}
+  .testi-photo{border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-md); aspect-ratio:1/1.05; position:relative;}
+  .testi-photo img{width:100%; height:100%; object-fit:cover;}
+  .testi-cards{display:flex; flex-direction:column; gap:18px;}
+  .testi-card{background:var(--white); border:1px solid var(--border); border-radius:var(--radius-md); padding:26px 28px; box-shadow:var(--shadow-sm);}
+  .testi-card .stars{display:flex; gap:2px; margin-bottom:14px;}
+  .testi-card .stars svg{width:15px; height:15px; fill:#F5B300;}
+  .testi-card p{font-size:15.5px; color:var(--ink-soft); margin-bottom:16px;}
+  .testi-attr{display:flex; align-items:center; gap:10px;}
+  .testi-attr .tag{width:36px; height:36px; border-radius:10px; background:var(--teal); color:#fff; display:flex; align-items:center; justify-content:center; font-size:12.5px; font-weight:700;}
+  .testi-attr .who{font-size:13.5px; font-weight:700; color:var(--ink);}
+  .testi-attr .what{font-size:12.5px; color:var(--muted);}
+
+  /* equipe */
+  .team-grid{display:grid; grid-template-columns:0.8fr 1.2fr; gap:56px; align-items:center;}
+  .team-photo{border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-md); aspect-ratio:3/3.6; position:relative; background:var(--teal-deep);}
+  .team-photo img{width:100%; height:100%; object-fit:cover; mix-blend-mode:luminosity; opacity:0.92;}
+  .team-photo::after{content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(10,46,41,0) 40%, rgba(7,46,40,0.55) 100%);}
+  .team-photo .tag{position:absolute; bottom:20px; left:20px; z-index:1; background:rgba(255,255,255,0.14); backdrop-filter:blur(6px); color:#fff; font-size:12.5px; font-weight:600; padding:8px 14px; border-radius:999px;}
+  .team-info .role{display:inline-block; color:var(--teal); font-weight:700; font-size:13.5px; letter-spacing:0.03em; text-transform:uppercase; margin-bottom:10px;}
+  .team-info h3{font-size:30px; margin-bottom:16px;}
+  .team-info p{font-size:16px; color:var(--ink-soft); max-width:56ch; margin-bottom:14px;}
+  .cred-chips{display:flex; flex-wrap:wrap; gap:10px; margin-top:22px;}
+  .cred-chips span{background:var(--bg); border:1px solid var(--border); border-radius:999px; padding:9px 16px; font-size:13px; font-weight:600; color:var(--ink-soft);}
+
+  /* cta band */
+  .cta-band{
+    border-radius:var(--radius-lg); background:linear-gradient(120deg, var(--teal) 0%, var(--teal-dark) 100%);
+    padding:70px var(--gutter); text-align:center; position:relative; overflow:hidden;
+    margin:0 var(--gutter);
+  }
+  .cta-band::before{
+    content:""; position:absolute; width:360px; height:360px; border-radius:50%;
+    background:rgba(255,255,255,0.06); top:-160px; left:-100px;
+    animation:ctaDrift 14s cubic-bezier(.4,0,.2,1) infinite alternate;
+  }
+  @keyframes ctaDrift{
+    from{ transform:translate(0,0) rotate(0deg); }
+    to{ transform:translate(40px,26px) rotate(18deg); }
+  }
+  .cta-band h2{color:#fff; font-size:clamp(1.8rem,3.4vw,2.6rem); margin-bottom:16px; position:relative;}
+  .cta-band p{color:rgba(255,255,255,0.82); font-size:17px; max-width:52ch; margin:0 auto 32px; position:relative;}
+  .cta-band .actions{position:relative; display:flex; gap:16px; justify-content:center; flex-wrap:wrap;}
+
+  /* contato */
+  .contact-grid{display:grid; grid-template-columns:0.85fr 1.15fr; gap:60px;}
+  .info-card{background:var(--bg); border-radius:var(--radius-lg); padding:36px; margin-bottom:0;}
+  .info-block{margin-bottom:28px;}
+  .info-block:last-child{margin-bottom:0;}
+  .info-block h4{font-size:12px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--muted); margin-bottom:10px;}
+  .info-block p, .info-block a{font-size:16px; text-decoration:none; line-height:1.55;}
+  .info-block a:hover{color:var(--teal);}
+  .hours-table{width:100%; margin-top:4px;}
+  .hours-table tr td{padding:8px 0; font-size:14.5px; border-bottom:1px solid var(--border);}
+  .hours-table tr:last-child td{border-bottom:none;}
+  .hours-table tr td:last-child{text-align:right; font-weight:700; color:var(--ink);}
+  .map-embed{margin-top:28px; border-radius:var(--radius-md); overflow:hidden; aspect-ratio:16/11; border:1px solid var(--border);}
+  .map-embed iframe{width:100%; height:100%; border:0; display:block;}
+
+  .whatsapp-cta{
+    background:linear-gradient(160deg, var(--teal) 0%, var(--teal-dark) 100%);
+    border-radius:var(--radius-lg); padding:44px 38px; height:100%;
+    display:flex; flex-direction:column; align-items:flex-start; justify-content:center;
+    position:relative; overflow:hidden; color:#fff;
+  }
+  .whatsapp-cta::before{
+    content:""; position:absolute; width:280px; height:280px; border-radius:50%;
+    background:rgba(255,255,255,0.07); bottom:-140px; right:-100px;
+    animation:ctaDrift 11s cubic-bezier(.4,0,.2,1) infinite alternate-reverse;
+  }
+  .whatsapp-cta .wa-icon{
+    width:64px; height:64px; border-radius:18px; background:rgba(255,255,255,0.14);
+    display:flex; align-items:center; justify-content:center; margin-bottom:22px; position:relative;
+    animation:waPulse 2.6s cubic-bezier(.4,0,.2,1) infinite;
+  }
+  @keyframes waPulse{
+    0%, 100%{ transform:scale(1); }
+    50%{ transform:scale(1.08); }
+  }
+  .whatsapp-cta .wa-icon svg{width:32px; height:32px; fill:#fff;}
+  .whatsapp-cta h3{color:#fff; font-size:26px; margin-bottom:12px; position:relative; max-width:16ch;}
+  .whatsapp-cta p{color:rgba(255,255,255,0.82); font-size:15.5px; max-width:38ch; margin-bottom:28px; position:relative;}
+  .whatsapp-cta .btn{position:relative; background:#25D366; box-shadow:none;}
+  .whatsapp-cta .btn:hover{background:#1EBE59; transform:translateY(-2px);}
+  .whatsapp-cta .wa-direct{position:relative; margin-top:20px; font-size:13.5px; color:rgba(255,255,255,0.75); text-decoration:none;}
+  .whatsapp-cta .wa-direct:hover{color:#fff;}
+
+  /* footer */
+  footer.site{padding:72px 0 32px; background:var(--teal-deep); color:#fff; margin-top:104px;}
+  .foot-grid{display:grid; grid-template-columns:1.4fr 0.8fr 0.8fr 1fr; gap:40px; margin-bottom:56px;}
+  .foot-brand{display:flex; align-items:center; gap:11px; margin-bottom:16px;}
+  .foot-brand .brand-mark{background:rgba(255,255,255,0.12);}
+  .foot-brand .brand-mark svg{stroke:#fff;}
+  .foot-brand .brand-name{color:#fff;}
+  .foot-brand .brand-name small{color:rgba(255,255,255,0.55);}
+  .foot-col p{color:rgba(255,255,255,0.6); font-size:14px; max-width:32ch;}
+  .foot-col h4{font-size:12px; font-weight:700; letter-spacing:0.07em; text-transform:uppercase; color:rgba(255,255,255,0.45); margin-bottom:16px;}
+  .foot-col a{display:block; font-size:14.5px; text-decoration:none; color:rgba(255,255,255,0.82); margin-bottom:11px;}
+  .foot-col a:hover{color:var(--mint);}
+  .foot-social{display:flex; gap:12px; margin-top:8px;}
+  .foot-social a{width:40px; height:40px; border-radius:12px; background:rgba(255,255,255,0.08); display:flex; align-items:center; justify-content:center; margin:0;}
+  .foot-social svg{width:17px; height:17px; stroke:#fff; fill:none; stroke-width:1.6;}
+  .foot-social a:hover{background:var(--teal);}
+  .foot-bottom{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; padding-top:24px; border-top:1px solid rgba(255,255,255,0.12); font-size:12.5px; color:rgba(255,255,255,0.5);}
+  .foot-bottom a{text-decoration:underline;}
+
+  /* reveal */
+  .reveal{opacity:0; transform:translateY(26px) scale(0.985); transition:opacity 700ms cubic-bezier(.16,1,.3,1), transform 700ms cubic-bezier(.16,1,.3,1);}
+  .reveal.in{opacity:1; transform:translateY(0) scale(1);}
+
+  /* sibling stagger for list-like groups, capped delay */
+  .bento .t-card{opacity:0; transform:translateY(26px); transition:opacity 650ms cubic-bezier(.16,1,.3,1), transform 650ms cubic-bezier(.16,1,.3,1), box-shadow 200ms ease, border-color 200ms ease;}
+  .reveal.in .bento .t-card{opacity:1; transform:translateY(0);}
+  .bento .t-card:nth-child(1), .bento .t-card:nth-child(1) .photo img{transition-delay:0ms;}
+  .bento .t-card:nth-child(2), .bento .t-card:nth-child(2) .photo img{transition-delay:70ms;}
+  .bento .t-card:nth-child(3), .bento .t-card:nth-child(3) .photo img{transition-delay:140ms;}
+  .bento .t-card:nth-child(4), .bento .t-card:nth-child(4) .photo img{transition-delay:210ms;}
+  .bento .t-card:nth-child(5), .bento .t-card:nth-child(5) .photo img{transition-delay:280ms;}
+  .bento .t-card:nth-child(6), .bento .t-card:nth-child(6) .photo img{transition-delay:350ms;}
+
+  .diff-list .diff-row{opacity:0; transform:translateX(-18px); transition:opacity 600ms cubic-bezier(.16,1,.3,1), transform 600ms cubic-bezier(.16,1,.3,1);}
+  .reveal.in .diff-list .diff-row{opacity:1; transform:translateX(0);}
+  .diff-list .diff-row:nth-child(1){transition-delay:0ms;}
+  .diff-list .diff-row:nth-child(2){transition-delay:80ms;}
+  .diff-list .diff-row:nth-child(3){transition-delay:160ms;}
+  .diff-list .diff-row:nth-child(4){transition-delay:240ms;}
+  .diff-list .diff-row:nth-child(5){transition-delay:320ms;}
+
+  .steps .step{opacity:0; transform:translateY(22px); transition:opacity 600ms cubic-bezier(.16,1,.3,1), transform 600ms cubic-bezier(.16,1,.3,1);}
+  .reveal.in .steps .step{opacity:1; transform:translateY(0);}
+  .steps .step:nth-child(1){transition-delay:0ms;}
+  .steps .step:nth-child(2){transition-delay:110ms;}
+  .steps .step:nth-child(3){transition-delay:220ms;}
+  .steps .step:nth-child(4){transition-delay:330ms;}
+  .steps::before{transform-origin:left center; transform:scaleX(0); transition:transform 900ms cubic-bezier(.16,1,.3,1) 250ms;}
+  .reveal.in .steps::before{transform:scaleX(1);}
+
+  .testi-cards .testi-card{opacity:0; transform:translateY(22px); transition:opacity 600ms cubic-bezier(.16,1,.3,1), transform 600ms cubic-bezier(.16,1,.3,1);}
+  .reveal.in .testi-cards .testi-card{opacity:1; transform:translateY(0);}
+  .testi-cards .testi-card:nth-child(1){transition-delay:0ms;}
+  .testi-cards .testi-card:nth-child(2){transition-delay:120ms;}
+  .testi-cards .testi-card:nth-child(3){transition-delay:240ms;}
+
+  /* image curtain-reveal: photos wipe open as their section enters view */
+  .diff-photo img, .testi-photo img, .team-photo img{
+    clip-path:inset(0 0 0 100%); transform:scale(1.12);
+    transition:clip-path 1000ms cubic-bezier(.16,1,.3,1) 120ms, transform 1300ms cubic-bezier(.16,1,.3,1);
+  }
+  .reveal.in .diff-photo img, .reveal.in .testi-photo img, .reveal.in .team-photo img{
+    clip-path:inset(0 0 0 0%); transform:scale(1);
+  }
+  .t-card.with-photo .photo img{
+    clip-path:inset(0 0 0 100%);
+    transition:clip-path 850ms cubic-bezier(.16,1,.3,1);
+  }
+  .reveal.in .t-card.with-photo .photo img{clip-path:inset(0 0 0 0%);}
+
+  /* responsive */
+  @media (min-width:900px){ .tel-link{display:inline-flex;} }
+
+  @media (max-width:1024px){
+    .hero-copy{padding-top:140px;}
+    .hero-stats{grid-template-columns:repeat(2,1fr); row-gap:24px;}
+    .hero-stats .stat-item:nth-child(3){border-left:none; padding-left:0;}
+    .bento{grid-template-columns:repeat(2,1fr);}
+    .diff-grid{grid-template-columns:1fr; gap:36px;}
+    .diff-photo{max-width:420px; margin:0 auto; aspect-ratio:16/10;}
+    .steps{grid-template-columns:repeat(2,1fr); row-gap:36px;}
+    .steps::before{display:none;}
+    .testi-layout{grid-template-columns:1fr; gap:36px;}
+    .testi-photo{max-width:360px; margin:0 auto; aspect-ratio:16/10;}
+    .team-grid{grid-template-columns:1fr; gap:36px;}
+    .team-photo{max-width:320px; margin:0 auto;}
+    .contact-grid{grid-template-columns:1fr; gap:40px;}
+    .foot-grid{grid-template-columns:1fr 1fr; gap:36px;}
+  }
+
+  @media (max-width:768px){
+    nav.primary, .header-cta .btn{display:none;}
+    .menu-toggle{display:flex;}
+    .bento{grid-template-columns:1fr;}
+    .steps{grid-template-columns:1fr;}
+    .foot-grid{grid-template-columns:1fr; gap:30px;}
+    section{padding:72px 0;}
+    .hero{min-height:100vh; min-height:100svh;}
+    .hero-copy{padding-top:112px;}
+    .hero .lede{max-width:none;}
+    .hero-stats{margin-top:40px; padding-bottom:32px;}
+    .cta-band{margin:0 16px; padding:52px 24px;}
+    .whatsapp-cta{padding:32px 26px;}
+    .info-card{padding:26px;}
+  }
+
+  /* mobile nav */
+  .mobile-nav{position:fixed; inset:0; background:var(--teal-deep); color:#fff; z-index:1500; padding:24px var(--gutter); display:flex; flex-direction:column; transform:translateX(100%); transition:transform 320ms ease;}
+  .mobile-nav.open{transform:translateX(0);}
+  .mobile-nav-top{display:flex; justify-content:space-between; align-items:center; margin-bottom:52px;}
+  .mobile-nav-top .brand-name{color:#fff;}
+  .mobile-nav-top .brand-name small{color:rgba(255,255,255,0.55);}
+  .mobile-close{background:rgba(255,255,255,0.1); border:none; width:44px; height:44px; border-radius:12px; display:flex; align-items:center; justify-content:center;}
+  .mobile-close svg{width:18px; height:18px; stroke:#fff;}
+  .mobile-nav a{
+    font-family:var(--display); font-size:28px; font-weight:700; text-decoration:none; color:#fff;
+    padding:14px 0; border-bottom:1px solid rgba(255,255,255,0.12);
+    opacity:0; transform:translateX(28px); transition:opacity 420ms cubic-bezier(.16,1,.3,1), transform 420ms cubic-bezier(.16,1,.3,1);
+  }
+  .mobile-nav.open a{opacity:1; transform:translateX(0);}
+  .mobile-nav .btn{margin-top:28px; align-self:flex-start;}
+</style>
+</head>
+<body>
+
+<a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
+
+<header class="site">
+  <div class="nav-row">
+    <a href="#topo" class="brand">
+      <span class="brand-mark"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 3c-3.5 0-6 2.6-6 6.2 0 2.6 1.1 4.6 2.4 5.9.3 1.5.8 3.4 1.5 3.4.8 0 1-2 1.2-3.2.3-.2.9-.2 1.2 0 .2 1.2.4 3.2 1.2 3.2.7 0 1.2-1.9 1.5-3.4C16.9 13.8 18 11.8 18 9.2 18 5.6 15.5 3 12 3z"/><circle cx="9.6" cy="7.8" r="0.9" fill="#3ECFB0"/></svg></span>
+      <span class="brand-name">Sorriso Ateliê<small>Odontologia Premium</small></span>
+    </a>
+    <nav class="primary" aria-label="Navegação principal">
+      <a href="#tratamentos">Tratamentos</a>
+      <a href="#diferenciais">Diferenciais</a>
+      <a href="#metodo">Método</a>
+      <a href="#depoimentos">Depoimentos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <div class="header-cta">
+      <a class="tel-link" href="tel:+551140001234">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .7 3a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.2-1.3a2 2 0 0 1 2.1-.5c1 .4 2 .6 3 .7a2 2 0 0 1 1.7 2z"/></svg>
+        (11) 4000-1234
+      </a>
+      <a class="btn" href="#contato">Agendar avaliação</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileNav">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav class="mobile-nav" id="mobileNav" aria-label="Menu mobile">
+  <div class="mobile-nav-top">
+    <span class="brand-name">Sorriso Ateliê<small>Odontologia Premium</small></span>
+    <button class="mobile-close" id="mobileClose" aria-label="Fechar menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+    </button>
+  </div>
+  <a href="#tratamentos" style="transition-delay:60ms;">Tratamentos</a>
+  <a href="#diferenciais" style="transition-delay:110ms;">Diferenciais</a>
+  <a href="#metodo" style="transition-delay:160ms;">Método</a>
+  <a href="#depoimentos" style="transition-delay:210ms;">Depoimentos</a>
+  <a href="#equipe" style="transition-delay:260ms;">Equipe</a>
+  <a href="#contato" style="transition-delay:310ms;">Contato</a>
+  <a class="btn on-dark" href="#contato" style="transition-delay:360ms;">Agendar avaliação</a>
+</nav>
+
+<main id="conteudo">
+
+  <!-- HERO -->
+  <section class="hero" id="topo">
+    <div class="hero-bg" aria-hidden="true">
+      <img src="img/resultado-sorriso.jpg" alt="">
+    </div>
+    <div class="hero-scrim" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="hero-copy">
+        <div class="chip on-photo">
+          <span class="dot"><svg viewBox="0 0 24 24" fill="#F5B300"><polygon points="12,2 14.9,8.6 22,9.3 16.7,14 18.2,21 12,17.3 5.8,21 7.3,14 2,9.3 9.1,8.6"/></svg></span>
+          4.9 no Google — mais de 860 avaliações
+        </div>
+        <h1>Seu <span class="accent">sorriso</span> ideal, com a precisão de uma clínica digital.</h1>
+        <p class="lede">Diagnóstico 3D, materiais de alta performance e uma equipe que acompanha cada etapa do seu tratamento — em um ambiente pensado para o seu conforto.</p>
+        <div class="hero-ctas">
+          <a class="btn" href="#contato">
+            Agendar avaliação gratuita
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn outline" href="#tratamentos">Ver tratamentos</a>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="n" data-count data-target="3200" data-suffix="+">0</div>
+          <div class="l">Pacientes atendidos</div>
+        </div>
+        <div class="stat-item">
+          <div class="n" data-count data-target="18" data-suffix=" anos">0</div>
+          <div class="l">De prática clínica</div>
+        </div>
+        <div class="stat-item">
+          <div class="n" data-count data-target="5" data-suffix=" anos">0</div>
+          <div class="l">De garantia estendida</div>
+        </div>
+        <div class="stat-item">
+          <div class="n" data-count data-target="4.9" data-decimals="1" data-suffix=" / 5">0</div>
+          <div class="l">Avaliação no Google</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRATAMENTOS -->
+  <section id="tratamentos" class="reveal">
+    <div class="wrap">
+      <div class="section-head center">
+        <span class="chip">Tratamentos</span>
+        <h2>Um cuidado completo para cada fase do seu sorriso.</h2>
+        <p>Da prevenção à reabilitação total, com planejamento digital em todas as etapas.</p>
+      </div>
+
+      <div class="bento">
+        <div class="t-card with-photo">
+          <div class="photo"><img src="img/aligner-invisivel.jpg" alt="Dentista mostrando um alinhador transparente ao paciente" style="object-position:50% 30%;"></div>
+          <div class="content">
+            <div class="ic"><svg viewBox="0 0 256 256" fill="#0A4A40"><path d="M96.26,37.05A8,8,0,0,1,102,27.29a104.11,104.11,0,0,1,52,0,8,8,0,0,1-2,15.75,8.15,8.15,0,0,1-2-.26,88.09,88.09,0,0,0-44,0A8,8,0,0,1,96.26,37.05ZM53.79,55.14a104.05,104.05,0,0,0-26,45,8,8,0,0,0,15.42,4.27,88,88,0,0,1,22-38.09A8,8,0,0,0,53.79,55.14ZM43.21,151.55a8,8,0,1,0-15.42,4.28,104.12,104.12,0,0,0,26,45,8,8,0,0,0,11.41-11.22A88.14,88.14,0,0,1,43.21,151.55ZM150,213.22a88,88,0,0,1-44,0,8,8,0,1,0-4,15.49,104.11,104.11,0,0,0,52,0,8,8,0,0,0-4-15.49ZM222.65,146a8,8,0,0,0-9.85,5.58,87.91,87.91,0,0,1-22,38.08,8,8,0,1,0,11.42,11.21,104,104,0,0,0,26-45A8,8,0,0,0,222.65,146Zm-9.86-41.54a8,8,0,0,0,15.42-4.28,104,104,0,0,0-26-45,8,8,0,1,0-11.41,11.22A88,88,0,0,1,212.79,104.45Z"/></svg></div>
+            <h3>Ortodontia invisível</h3>
+            <p>Alinhadores transparentes com previsão de resultado desde a primeira consulta e revisão mensal do plano.</p>
+            <a class="go" href="#contato">Saiba mais <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </div>
+
+        <div class="t-card with-photo">
+          <div class="photo"><img src="img/whitening-smile.jpg" alt="Close-up de sorriso após clareamento dental"></div>
+          <div class="content">
+            <div class="ic"><svg viewBox="0 0 256 256" fill="#0A4A40"><path d="M197.58,129.06,146,110l-19-51.62a15.92,15.92,0,0,0-29.88,0L78,110l-51.62,19a15.92,15.92,0,0,0,0,29.88L78,178l19,51.62a15.92,15.92,0,0,0,29.88,0L146,178l51.62-19a15.92,15.92,0,0,0,0-29.88ZM137,164.22a8,8,0,0,0-4.74,4.74L112,223.85,91.78,169A8,8,0,0,0,87,164.22L32.15,144,87,123.78A8,8,0,0,0,91.78,119L112,64.15,132.22,119a8,8,0,0,0,4.74,4.74L191.85,144ZM144,40a8,8,0,0,1,8-8h16V16a8,8,0,0,1,16,0V32h16a8,8,0,0,1,0,16H184V64a8,8,0,0,1-16,0V48H152A8,8,0,0,1,144,40ZM248,88a8,8,0,0,1-8,8h-8v8a8,8,0,0,1-16,0V96h-8a8,8,0,0,1,0-16h8V72a8,8,0,0,1,16,0v8h8A8,8,0,0,1,248,88Z"/></svg></div>
+            <h3>Clareamento a laser</h3>
+            <p>Protocolo supervisionado com controle de sensibilidade e previsibilidade de tom.</p>
+            <a class="go" href="#contato">Saiba mais <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </div>
+
+        <div class="t-card with-photo">
+          <div class="photo"><img src="img/sorriso-close.jpg" alt="Sorriso natural e alinhado após aplicação de lentes de contato dental" style="object-position:50% 58%;"></div>
+          <div class="content">
+            <div class="ic"><svg viewBox="0 0 256 256" fill="#0A4A40"><path d="M230.91,172A8,8,0,0,1,228,182.91l-96,56a8,8,0,0,1-8.06,0l-96-56A8,8,0,0,1,36,169.09l92,53.65,92-53.65A8,8,0,0,1,230.91,172ZM220,121.09l-92,53.65L36,121.09A8,8,0,0,0,28,134.91l96,56a8,8,0,0,0,8.06,0l96-56A8,8,0,1,0,220,121.09ZM24,80a8,8,0,0,1,4-6.91l96-56a8,8,0,0,1,8.06,0l96,56a8,8,0,0,1,0,13.82l-96,56a8,8,0,0,1-8.06,0l-96-56A8,8,0,0,1,24,80Zm23.88,0L128,126.74,208.12,80,128,33.26Z"/></svg></div>
+            <h3>Lentes de contato dental</h3>
+            <p>Facetas ultrafinas desenhadas com o paciente, a partir de simulação digital do sorriso.</p>
+            <a class="go" href="#contato">Saiba mais <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </div>
+
+        <div class="t-card with-photo">
+          <div class="photo"><img src="img/implante-screw.jpg" alt="Modelo de implante dentário mostrando o parafuso de titânio entre os dentes"></div>
+          <div class="content">
+            <div class="ic"><svg viewBox="0 0 256 256" fill="#0A4A40"><path d="M221.87,83.16A104.1,104.1,0,1,1,195.67,49l22.67-22.68a8,8,0,0,1,11.32,11.32l-96,96a8,8,0,0,1-11.32-11.32l27.72-27.72a40,40,0,1,0,17.87,31.09,8,8,0,1,1,16-.9,56,56,0,1,1-22.38-41.65L184.3,60.39a87.88,87.88,0,1,0,23.13,29.67,8,8,0,0,1,14.44-6.9Z"/></svg></div>
+            <h3>Implantes guiados</h3>
+            <p>Cirurgia planejada em software 3D com guia impresso sob medida para cada caso.</p>
+            <a class="go" href="#contato">Saiba mais <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </div>
+
+        <div class="t-card with-photo">
+          <div class="photo"><img src="img/protese-moldes.jpg" alt="Moldes odontológicos usados na fabricação de próteses digitais"></div>
+          <div class="content">
+            <div class="ic"><svg viewBox="0 0 256 256" fill="#0A4A40"><path d="M223.68,66.15,135.68,18h0a15.88,15.88,0,0,0-15.36,0l-88,48.17a16,16,0,0,0-8.32,14v95.64a16,16,0,0,0,8.32,14l88,48.17a15.88,15.88,0,0,0,15.36,0l88-48.17a16,16,0,0,0,8.32-14V80.18A16,16,0,0,0,223.68,66.15ZM128,32h0l80.34,44L128,120,47.66,76ZM40,90l80,43.78v85.79L40,175.82Zm96,129.57V133.82L216,90v85.78Z"/></svg></div>
+            <h3>Prótese digital</h3>
+            <p>Coroas e próteses fresadas com precisão milimétrica, reduzindo ajustes e retornos.</p>
+            <a class="go" href="#contato">Saiba mais <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </div>
+
+        <div class="t-card with-photo">
+          <div class="photo"><img src="img/odontopediatria.jpg" alt="Criança sendo atendida com cuidado durante consulta odontológica"></div>
+          <div class="content">
+            <div class="ic"><svg viewBox="0 0 256 256" fill="#0A4A40"><path d="M92,140a12,12,0,1,1,12-12A12,12,0,0,1,92,140Zm72-24a12,12,0,1,0,12,12A12,12,0,0,0,164,116Zm-12.27,45.23a45,45,0,0,1-47.46,0,8,8,0,0,0-8.54,13.54,61,61,0,0,0,64.54,0,8,8,0,0,0-8.54-13.54ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88.11,88.11,0,0,0-84.09-87.91C120.32,56.38,120,71.88,120,72a8,8,0,0,0,16,0,8,8,0,0,1,16,0,24,24,0,0,1-48,0c0-.73.13-14.3,8.46-30.63A88,88,0,1,0,216,128Z"/></svg></div>
+            <h3>Odontopediatria</h3>
+            <p>Consultas pensadas para reduzir a ansiedade infantil e construir uma boa relação com o cuidado.</p>
+            <a class="go" href="#contato">Saiba mais <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIFERENCIAIS -->
+  <section id="diferenciais" class="band-soft reveal">
+    <div class="wrap diff-grid">
+      <div class="diff-photo">
+        <img src="img/equipamento.jpg" alt="Equipamento odontológico moderno com iluminação de precisão">
+      </div>
+      <div>
+        <div class="section-head left" style="margin-bottom:32px;">
+          <span class="chip">Diferenciais</span>
+          <h2>Tecnologia e conforto em cada detalhe.</h2>
+        </div>
+        <div class="diff-list">
+          <div class="diff-row">
+            <div class="ic"><svg viewBox="0 0 256 256" fill="#0A4A40"><path d="M224,40V80a8,8,0,0,1-16,0V48H176a8,8,0,0,1,0-16h40A8,8,0,0,1,224,40ZM80,208H48V176a8,8,0,0,0-16,0v40a8,8,0,0,0,8,8H80a8,8,0,0,0,0-16Zm136-40a8,8,0,0,0-8,8v32H176a8,8,0,0,0,0,16h40a8,8,0,0,0,8-8V176A8,8,0,0,0,216,168ZM40,88a8,8,0,0,0,8-8V48H80a8,8,0,0,0,0-16H40a8,8,0,0,0-8,8V80A8,8,0,0,0,40,88ZM80,72h96a8,8,0,0,1,8,8v96a8,8,0,0,1-8,8H80a8,8,0,0,1-8-8V80A8,8,0,0,1,80,72Zm8,96h80V88H88Z"/></svg></div>
+            <div><h3>Scanner intraoral</h3><p>Sem moldagem de silicone — leitura digital em minutos.</p></div>
+          </div>
+          <div class="diff-row">
+            <div class="ic"><svg viewBox="0 0 256 256" fill="#0A4A40"><path d="M56,96v64a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0ZM88,24a8,8,0,0,0-8,8V224a8,8,0,0,0,16,0V32A8,8,0,0,0,88,24Zm40,32a8,8,0,0,0-8,8V192a8,8,0,0,0,16,0V64A8,8,0,0,0,128,56Zm40,32a8,8,0,0,0-8,8v64a8,8,0,0,0,16,0V96A8,8,0,0,0,168,88Zm40-16a8,8,0,0,0-8,8v96a8,8,0,0,0,16,0V80A8,8,0,0,0,208,72Z"/></svg></div>
+            <div><h3>Tomografia no local</h3><p>Imagem 3D feita na própria clínica, sem encaminhamento externo.</p></div>
+          </div>
+          <div class="diff-row">
+            <div class="ic"><svg viewBox="0 0 256 256" fill="#0A4A40"><path d="M178,40c-20.65,0-38.73,8.88-50,23.89C116.73,48.88,98.65,40,78,40a62.07,62.07,0,0,0-62,62c0,70,103.79,126.66,108.21,129a8,8,0,0,0,7.58,0C136.21,228.66,240,172,240,102A62.07,62.07,0,0,0,178,40ZM128,214.8C109.74,204.16,32,155.69,32,102A46.06,46.06,0,0,1,78,56c19.45,0,35.78,10.36,42.6,27a8,8,0,0,0,14.8,0c6.82-16.67,23.15-27,42.6-27a46.06,46.06,0,0,1,46,46C224,155.61,146.24,204.15,128,214.8Z"/></svg></div>
+            <div><h3>Sedação consciente</h3><p>Protocolo disponível para pacientes com ansiedade odontológica.</p></div>
+          </div>
+          <div class="diff-row">
+            <div class="ic"><svg viewBox="0 0 256 256" fill="#0A4A40"><path d="M224,48H32A16,16,0,0,0,16,64V192a16,16,0,0,0,16,16H224a16,16,0,0,0,16-16V64A16,16,0,0,0,224,48Zm0,16V88H32V64Zm0,128H32V104H224v88Zm-16-24a8,8,0,0,1-8,8H168a8,8,0,0,1,0-16h32A8,8,0,0,1,208,168Zm-64,0a8,8,0,0,1-8,8H120a8,8,0,0,1,0-16h16A8,8,0,0,1,144,168Z"/></svg></div>
+            <div><h3>Parcelamento em até 18x</h3><p>Planejamento financeiro claro, apresentado antes de iniciar.</p></div>
+          </div>
+          <div class="diff-row">
+            <div class="ic"><svg viewBox="0 0 256 256" fill="#0A4A40"><path d="M208,40H48A16,16,0,0,0,32,56v56c0,52.72,25.52,84.67,46.93,102.19,23.06,18.86,46,25.26,47,25.53a8,8,0,0,0,4.2,0c1-.27,23.91-6.67,47-25.53C198.48,196.67,224,164.72,224,112V56A16,16,0,0,0,208,40Zm0,72c0,37.07-13.66,67.16-40.6,89.42A129.3,129.3,0,0,1,128,223.62a128.25,128.25,0,0,1-38.92-21.81C61.82,179.51,48,149.3,48,112l0-56,160,0ZM82.34,141.66a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32l-56,56a8,8,0,0,1-11.32,0Z"/></svg></div>
+            <div><h3>Garantia de 5 anos</h3><p>Cobertura estendida em próteses e implantes.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- METODO -->
+  <section id="metodo" class="reveal">
+    <div class="wrap">
+      <div class="section-head center">
+        <span class="chip">Método</span>
+        <h2>Como funciona o seu tratamento.</h2>
+        <p>O mesmo protocolo cuidadoso para todo caso — do clareamento simples à reabilitação completa.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="num">1</div>
+          <h3>Diagnóstico digital</h3>
+          <p>Fotos clínicas, scanner intraoral e tomografia — antes de qualquer recomendação.</p>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <h3>Plano de tratamento</h3>
+          <p>Simulação visual do resultado e orçamento fechado, sem surpresas.</p>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <h3>Execução</h3>
+          <p>Protocolos de conforto, com sedação consciente para casos de ansiedade.</p>
+        </div>
+        <div class="step">
+          <div class="num">4</div>
+          <h3>Acompanhamento</h3>
+          <p>Retornos programados e garantia estendida sobre próteses e implantes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section id="depoimentos" class="band-soft reveal">
+    <div class="wrap">
+      <div class="section-head left" style="margin-bottom:48px;">
+        <span class="chip">Depoimentos</span>
+        <h2>Impressões de quem passou pelo processo.</h2>
+      </div>
+      <div class="testi-layout">
+        <div class="testi-photo">
+          <img src="img/dentista-paciente.jpg" alt="Dentista e paciente sorrindo satisfeitos após o atendimento" style="object-position:42% 40%;">
+        </div>
+        <div class="testi-cards">
+          <div class="testi-card">
+            <div class="stars" aria-hidden="true">
+              <svg viewBox="0 0 20 20"><polygon points="10,1 12.6,7 19,7.5 14,11.8 15.6,18 10,14.5 4.4,18 6,11.8 1,7.5 7.4,7"/></svg>
+              <svg viewBox="0 0 20 20"><polygon points="10,1 12.6,7 19,7.5 14,11.8 15.6,18 10,14.5 4.4,18 6,11.8 1,7.5 7.4,7"/></svg>
+              <svg viewBox="0 0 20 20"><polygon points="10,1 12.6,7 19,7.5 14,11.8 15.6,18 10,14.5 4.4,18 6,11.8 1,7.5 7.4,7"/></svg>
+              <svg viewBox="0 0 20 20"><polygon points="10,1 12.6,7 19,7.5 14,11.8 15.6,18 10,14.5 4.4,18 6,11.8 1,7.5 7.4,7"/></svg>
+              <svg viewBox="0 0 20 20"><polygon points="10,1 12.6,7 19,7.5 14,11.8 15.6,18 10,14.5 4.4,18 6,11.8 1,7.5 7.4,7"/></svg>
+            </div>
+            <p>"Mostraram no computador como meu sorriso ficaria antes de eu decidir. Foi a primeira vez que senti controle sobre um tratamento odontológico."</p>
+            <div class="testi-attr"><span class="tag">RM</span><div><div class="who">Renata M.</div><div class="what">Lentes de contato dental</div></div></div>
+          </div>
+          <div class="testi-card">
+            <div class="stars" aria-hidden="true">
+              <svg viewBox="0 0 20 20"><polygon points="10,1 12.6,7 19,7.5 14,11.8 15.6,18 10,14.5 4.4,18 6,11.8 1,7.5 7.4,7"/></svg>
+              <svg viewBox="0 0 20 20"><polygon points="10,1 12.6,7 19,7.5 14,11.8 15.6,18 10,14.5 4.4,18 6,11.8 1,7.5 7.4,7"/></svg>
+              <svg viewBox="0 0 20 20"><polygon points="10,1 12.6,7 19,7.5 14,11.8 15.6,18 10,14.5 4.4,18 6,11.8 1,7.5 7.4,7"/></svg>
+              <svg viewBox="0 0 20 20"><polygon points="10,1 12.6,7 19,7.5 14,11.8 15.6,18 10,14.5 4.4,18 6,11.8 1,7.5 7.4,7"/></svg>
+              <svg viewBox="0 0 20 20"><polygon points="10,1 12.6,7 19,7.5 14,11.8 15.6,18 10,14.5 4.4,18 6,11.8 1,7.5 7.4,7"/></svg>
+            </div>
+            <p>"Tenho pavor de dentista desde criança. A sedação consciente e a forma como explicaram cada etapa mudaram minha relação com o consultório."</p>
+            <div class="testi-attr"><span class="tag">TA</span><div><div class="who">Thiago A.</div><div class="what">Implante guiado</div></div></div>
+          </div>
+          <div class="testi-card">
+            <div class="stars" aria-hidden="true">
+              <svg viewBox="0 0 20 20"><polygon points="10,1 12.6,7 19,7.5 14,11.8 15.6,18 10,14.5 4.4,18 6,11.8 1,7.5 7.4,7"/></svg>
+              <svg viewBox="0 0 20 20"><polygon points="10,1 12.6,7 19,7.5 14,11.8 15.6,18 10,14.5 4.4,18 6,11.8 1,7.5 7.4,7"/></svg>
+              <svg viewBox="0 0 20 20"><polygon points="10,1 12.6,7 19,7.5 14,11.8 15.6,18 10,14.5 4.4,18 6,11.8 1,7.5 7.4,7"/></svg>
+              <svg viewBox="0 0 20 20"><polygon points="10,1 12.6,7 19,7.5 14,11.8 15.6,18 10,14.5 4.4,18 6,11.8 1,7.5 7.4,7"/></svg>
+              <svg viewBox="0 0 20 20"><polygon points="10,1 12.6,7 19,7.5 14,11.8 15.6,18 10,14.5 4.4,18 6,11.8 1,7.5 7.4,7"/></svg>
+            </div>
+            <p>"O orçamento foi fechado desde o início, sem surpresa nenhuma no meio do tratamento. Isso valeu mais do que qualquer promessa de resultado."</p>
+            <div class="testi-attr"><span class="tag">CO</span><div><div class="who">Camila O.</div><div class="what">Reabilitação completa</div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EQUIPE -->
+  <section id="equipe" class="reveal">
+    <div class="wrap team-grid">
+      <div class="team-photo">
+        <img src="img/dentista-retrato.jpg" alt="Dra. Marina Ceccon, cirurgiã-dentista responsável técnica">
+        <span class="tag">Responsável técnica</span>
+      </div>
+      <div class="team-info">
+        <span class="role">Equipe</span>
+        <h3>Dra. Marina Ceccon</h3>
+        <p>Especialista em dentística estética e reabilitação oral, com pós-graduação em prótese digital. Idealizou o Sorriso Ateliê para provar que odontologia de alto padrão pode ser próxima, didática e visualmente honesta sobre o que é possível entregar.</p>
+        <p>Atende por agenda reduzida, com no máximo seis pacientes por dia, para preservar o tempo dedicado a cada plano de tratamento.</p>
+        <div class="cred-chips">
+          <span>CRO-SP 123.456</span>
+          <span>USP, 2008</span>
+          <span>Prótese Digital — APCD</span>
+          <span>Academia Bras. de Odontologia Estética</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <div class="wrap reveal">
+    <div class="cta-band">
+      <h2>Pronto para dar o primeiro passo?</h2>
+      <p>Agende uma avaliação gratuita e saia com um plano de tratamento claro, com prazos e valores definidos.</p>
+      <div class="actions">
+        <a class="btn on-dark" href="#contato">Agendar avaliação</a>
+        <a class="btn outline" style="border-color:rgba(255,255,255,0.4); color:#fff;" href="https://wa.me/5511940001234">Falar no WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTATO -->
+  <section id="contato" class="reveal">
+    <div class="wrap">
+      <div class="section-head center">
+        <span class="chip">Contato</span>
+        <h2>Agende sua avaliação.</h2>
+        <p>Fale direto com a nossa equipe pelo WhatsApp — respondemos em até um dia útil.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="info-card">
+          <div class="info-block">
+            <h4>Endereço</h4>
+            <p>Rua Harmonia, 245 — conj. 61<br>Vila Madalena, São Paulo — SP<br>05435-000</p>
+          </div>
+          <div class="info-block">
+            <h4>Contato direto</h4>
+            <p><a href="tel:+551140001234">(11) 4000-1234</a></p>
+            <p><a href="https://wa.me/5511940001234">(11) 94000-1234 — WhatsApp</a></p>
+            <p><a href="mailto:contato@sorrisoatelie.com.br">contato@sorrisoatelie.com.br</a></p>
+          </div>
+          <div class="info-block">
+            <h4>Horário de atendimento</h4>
+            <table class="hours-table">
+              <tr><td>Segunda a sexta</td><td>08h–19h</td></tr>
+              <tr><td>Sábado</td><td>08h–13h</td></tr>
+              <tr><td>Domingo</td><td>Fechado</td></tr>
+            </table>
+          </div>
+          <div class="map-embed">
+            <iframe
+              src="https://www.google.com/maps?q=Rua+Harmonia,+Vila+Madalena,+São+Paulo,+SP&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Localização do Sorriso Ateliê no mapa"
+              aria-label="Mapa mostrando a localização da clínica na Rua Harmonia, Vila Madalena, São Paulo">
+            </iframe>
+          </div>
+        </div>
+
+        <div class="whatsapp-cta">
+          <div class="wa-icon"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.5L3 20l1.1-5.4A8.5 8.5 0 1 1 21 11.5z"/></svg></div>
+          <h3>Fale agora pelo WhatsApp</h3>
+          <p>Conte pra gente o que você procura e receba, ainda hoje, os próximos passos para a sua avaliação — sem formulário, sem espera.</p>
+          <a class="btn" href="https://wa.me/5511940001234?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20no%20Sorriso%20Ateli%C3%AA." target="_blank" rel="noopener">
+            Iniciar conversa
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="wa-direct" href="tel:+551140001234">ou ligue para (11) 4000-1234</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-col">
+        <div class="foot-brand">
+          <span class="brand-mark"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 3c-3.5 0-6 2.6-6 6.2 0 2.6 1.1 4.6 2.4 5.9.3 1.5.8 3.4 1.5 3.4.8 0 1-2 1.2-3.2.3-.2.9-.2 1.2 0 .2 1.2.4 3.2 1.2 3.2.7 0 1.2-1.9 1.5-3.4C16.9 13.8 18 11.8 18 9.2 18 5.6 15.5 3 12 3z"/></svg></span>
+          <span class="brand-name">Sorriso Ateliê<small>Odontologia Premium</small></span>
+        </div>
+        <p>Clínica odontológica premium em São Paulo — tecnologia digital e agenda reduzida para cuidar do seu sorriso com precisão.</p>
+        <div class="foot-social">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="#fff" stroke="none"/></svg></a>
+          <a href="https://wa.me/5511940001234" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.5L3 20l1.1-5.4A8.5 8.5 0 1 1 21 11.5z"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M15 8h-2a2 2 0 0 0-2 2v10M9 13h6"/></svg></a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Navegação</h4>
+        <a href="#tratamentos">Tratamentos</a>
+        <a href="#metodo">Método</a>
+        <a href="#depoimentos">Depoimentos</a>
+        <a href="#equipe">Equipe</a>
+      </div>
+      <div class="foot-col">
+        <h4>Clínica</h4>
+        <a href="#diferenciais">Diferenciais</a>
+        <a href="#contato">Contato</a>
+      </div>
+      <div class="foot-col">
+        <h4>Contato</h4>
+        <a href="tel:+551140001234">(11) 4000-1234</a>
+        <a href="mailto:contato@sorrisoatelie.com.br">contato@sorrisoatelie.com.br</a>
+        <a href="#contato">Rua Harmonia, 245 — SP</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year"></span> Sorriso Ateliê Odontologia. CRO-SP 123.456. Todos os direitos reservados.</span>
+      <span>Site por <a href="#">Black Agency</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const header = document.querySelector('header.site');
+  function onHeaderScroll(){
+    if(window.scrollY > 40){ header.classList.add('scrolled'); }
+    else{ header.classList.remove('scrolled'); }
+  }
+  onHeaderScroll();
+  window.addEventListener('scroll', onHeaderScroll, {passive:true});
+
+  const toggle = document.getElementById('menuToggle');
+  const closeBtn = document.getElementById('mobileClose');
+  const mobileNav = document.getElementById('mobileNav');
+  function openNav(){ mobileNav.classList.add('open'); toggle.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; }
+  function closeNav(){ mobileNav.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+  toggle.addEventListener('click', openNav);
+  closeBtn.addEventListener('click', closeNav);
+  mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeNav));
+
+  const reveals = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {threshold:0.1});
+    reveals.forEach(r => io.observe(r));
+  } else {
+    reveals.forEach(r => r.classList.add('in'));
+  }
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function animateCount(el){
+    const target = parseFloat(el.getAttribute('data-target'));
+    const decimals = parseInt(el.getAttribute('data-decimals') || '0', 10);
+    const suffix = el.getAttribute('data-suffix') || '';
+    if(reduceMotion){
+      el.textContent = target.toLocaleString('pt-BR', {minimumFractionDigits:decimals, maximumFractionDigits:decimals}) + suffix;
+      return;
+    }
+    const duration = 1400;
+    const start = performance.now();
+    function tick(now){
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const value = target * eased;
+      el.textContent = value.toLocaleString('pt-BR', {minimumFractionDigits:decimals, maximumFractionDigits:decimals}) + suffix;
+      if(progress < 1){ requestAnimationFrame(tick); }
+    }
+    requestAnimationFrame(tick);
+  }
+  const counters = document.querySelectorAll('[data-count]');
+  if('IntersectionObserver' in window){
+    const countIo = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if(e.isIntersecting){ animateCount(e.target); countIo.unobserve(e.target); } });
+    }, {threshold:0.4});
+    counters.forEach(c => countIo.observe(c));
+  } else {
+    counters.forEach(animateCount);
+  }
+</script>
+
+</body>
+</html>
